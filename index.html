@@ -3,100 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#02070e" />
-  <title>FROID — Collection 01</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#234157" />
+  <title>Froid — New Collection</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Froid home">
-      <img class="brand-logo" src="./public/brand/froid-logo.webp" alt="Froid" />
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#collection">Collection</a>
-      <button class="nav-search" type="button" data-focus-search>Search</button>
-      <a href="#about">About</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">FROID / COLLECTION 01 / 2026</p>
-        <h1 id="hero-title">Built for<br><em>below zero.</em></h1>
-        <p class="hero-text">Technical cold-weather silhouettes shaped by ice, elevation, and movement.</p>
-        <a class="hero-link" href="#collection">Explore the collection <span>↘</span></a>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Froid home">
+        <img src="./public/brand/froid-ice-logo.webp" alt="Froid" />
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="#collection">Collection</a>
+        <a href="#collection">Outerwear</a>
+        <a href="#campaign">Campaign</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-button" type="button" aria-label="Search" data-focus-search>⌕</button>
+        <button class="bag" type="button">Bag <span>00</span></button>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <img src="./public/brand/froid-ice-logo.webp" alt="" />
-      </div>
-    </section>
+    </header>
 
-    <section class="collection" id="collection" aria-labelledby="collection-title">
-      <div class="collection-head">
-        <div>
-          <p class="eyebrow">SHOP THE DROP</p>
-          <h2 id="collection-title">COLLECTION 01</h2>
+    <main id="top">
+      <section class="hero" id="campaign" aria-label="Froid Wear campaign">
+        <img src="./public/brand/froid-wear-hero.webp" alt="Froid Wear campaign in an icy mountain landscape" />
+      </section>
+
+      <section class="collection" id="collection">
+        <div class="collection-heading">
+          <div>
+            <p class="eyebrow">FROID / DROP 01 / 2026</p>
+            <h1>NEW COLLECTION</h1>
+          </div>
+          <div class="collection-note">
+            <span>REF: FW26_01</span>
+            <span>NORTH / 07°</span>
+            <span>CONTROL: COLD_ICE</span>
+          </div>
         </div>
-        <p class="collection-count">09 PIECES / 2026</p>
-      </div>
 
-      <div class="toolbar" role="search">
-        <label class="search-field">
-          <span class="sr-only">Search collection</span>
-          <input id="product-search" type="search" placeholder="SEARCH COLLECTION" autocomplete="off" />
-          <span class="search-icon" aria-hidden="true">⌕</span>
-        </label>
-        <div class="filters" aria-label="Filter collection">
-          <button class="filter is-active" type="button" data-filter="all">All</button>
-          <button class="filter" type="button" data-filter="light">Light</button>
-          <button class="filter" type="button" data-filter="dark">Dark</button>
-          <button class="filter" type="button" data-filter="color">Color</button>
+        <div class="collection-layout">
+          <aside class="campaign-card" id="aurora">
+            <div class="campaign-grid"></div>
+            <div class="campaign-copy">
+              <p class="eyebrow">FROID LAB / 01</p>
+              <h2>AURORA™</h2>
+              <p>THERMAL SHELL / REFLECTIVE SURFACE</p>
+              <div class="campaign-price">$1,999</div>
+            </div>
+            <img class="campaign-model" src="./public/models/model-fur.webp" alt="Model in Froid fur outerwear" />
+            <img class="campaign-logo" src="./public/brand/froid-logo.webp" alt="" />
+          </aside>
+
+          <div class="catalog-area">
+            <div class="catalog-toolbar">
+              <label class="search-control">
+                <span>SEARCH</span>
+                <input id="product-search" type="search" placeholder="STYLE / COLOR / CODE" autocomplete="off" />
+              </label>
+              <div class="filter-group" aria-label="Product filters">
+                <button class="filter is-active" type="button" data-filter="all">ALL</button>
+                <button class="filter" type="button" data-filter="light">LIGHT</button>
+                <button class="filter" type="button" data-filter="dark">DARK</button>
+                <button class="filter" type="button" data-filter="color">COLOR</button>
+              </div>
+            </div>
+
+            <div class="product-landscape" aria-live="polite">
+              <img class="ambient-mountains" src="./public/platforms/mountain-range.webp" alt="" />
+              <div class="collection-row row-a" id="row-a"></div>
+              <div class="collection-row row-b" id="row-b"></div>
+              <p class="empty-state" id="empty-state" hidden>NO ITEMS MATCH THIS FILTER.</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="product-row product-row-a" id="row-a"></div>
-      <div class="product-row product-row-b" id="row-b"></div>
-      <p id="empty-state" class="empty-state" hidden>No pieces match that search.</p>
-    </section>
-
-    <section class="about" id="about">
-      <p class="eyebrow">FROID / FIELD NOTES</p>
-      <div class="about-grid">
-        <h2>COLD IS<br>THE MATERIAL.</h2>
-        <p>Froid treats winter as a design environment rather than a season. Collection 01 combines oversized thermal volumes, alpine utility, reflective surfaces and exaggerated cold-weather proportions.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>FROID © 2026</span>
-    <span>DESIGNED FOR THE COLD</span>
-  </footer>
+      </section>
+    </main>
+  </div>
 
   <template id="product-template">
     <article class="product-card">
-      <div class="product-art">
-        <div class="ambient-mountains" aria-hidden="true"></div>
-        <img class="mountain-stage" alt="" aria-hidden="true" />
-        <img class="platform-fill" alt="" aria-hidden="true" />
-        <img class="product-model" />
+      <div class="stage">
+        <img class="mountain-stage" alt="" />
+        <img class="platform-fill" alt="" hidden />
+        <img class="product-model" alt="" />
       </div>
       <div class="product-info">
-        <div class="product-title-line">
-          <div>
-            <h3></h3>
-            <p class="product-subtitle"></p>
-          </div>
-          <p class="product-price"></p>
+        <div>
+          <h3></h3>
+          <p class="product-subtitle"></p>
         </div>
-        <div class="product-meta">
-          <span class="product-code"></span>
-          <span class="product-color-wrap"><i class="swatch"></i><span class="product-color"></span></span>
-        </div>
+        <p class="product-price"></p>
+      </div>
+      <div class="product-meta">
+        <span class="product-code"></span>
+        <span class="swatch"></span>
+        <span class="product-color"></span>
       </div>
     </article>
   </template>

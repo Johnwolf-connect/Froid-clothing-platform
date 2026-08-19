@@ -7,7 +7,7 @@ const products = [
   { name: 'SOLAR ICE', subtitle: 'Gloss technical puffer', price: '$920', code: 'FR-SI06', color: 'Yellow', swatch: '#e4c336', group: 'color', model: 'model-7.webp', platform: 'b' },
   { name: 'POLAR MONO', subtitle: 'Extended cold coat', price: '$1,090', code: 'FR-PM07', color: 'Black / White', swatch: '#e9e9e9', group: 'light', model: 'model-8.webp', platform: 'a' },
   { name: 'EMBER BLUE', subtitle: 'Long puffer system', price: '$1,160', code: 'FR-EB08', color: 'Orange / Blue', swatch: '#ec6f26', group: 'color', model: 'model-9.webp', platform: 'b' },
-  { name: 'AURORA FUR', subtitle: 'Cropped arctic fur', price: '$1,320', code: 'FR-AF09', color: 'Graphite', swatch: '#53575c', group: 'dark', model: 'model-fur.webp', platform: 'a' },
+  { name: 'AURORA FUR', subtitle: 'Cropped arctic fur', price: '$1,320', code: 'FR-AF09', color: 'Graphite', swatch: '#53575c', group: 'dark', model: 'model-1.webp', platform: 'a' },
 ];
 
 const search = document.querySelector('#product-search');
@@ -32,6 +32,9 @@ function buildCard(product, index) {
   model.src = `./public/models/${product.model}`;
   model.alt = `Model wearing ${product.name}`;
   model.loading = index > 3 ? 'lazy' : 'eager';
+
+  // The old filler layer is intentionally disabled. These supplied platforms
+  // are complete standalone objects and need negative space around them.
   fill.hidden = true;
 
   fragment.querySelector('h3').textContent = product.name;
