@@ -450,3 +450,41 @@ main,
 .collection-row {
   background: transparent !important;
 }
+
+/* ===== FROID BACKGROUND + NAV LOGO FIX ===== */
+
+/* New cracked-ice site background */
+body {
+  background-color: #29475d;
+
+  background-image:
+    linear-gradient(
+      rgba(31, 60, 81, 0.68),
+      rgba(31, 60, 81, 0.74)
+    ),
+    url("./public/textures/froid-site-bg.png?v=2");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Fix Froid logo being cropped in navigation */
+.wordmark {
+  width: 125px;
+  height: 58px;
+  overflow: visible !important;
+  display: flex;
+  align-items: center;
+}
+
+.wordmark img {
+  width: 118px;
+  height: auto;
+  max-height: 54px;
+  object-fit: contain;
+  object-position: left center;
+  transform: none !important;
+  display: block;
+}
