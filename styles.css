@@ -1431,3 +1431,68 @@ body {
 }
 
 /* ===== FROID MOBILE 2.5 CARD CAROUSEL END ===== */
+
+/* ===== FROID ALL-MODEL DESKTOP HOVER START ===== */
+
+@media (min-width: 851px) {
+
+  /*
+    All standard models:
+    subtle enlargement anchored at the feet.
+  */
+  .product-card .product-model {
+    transform-origin: center bottom !important;
+
+    transition:
+      transform 180ms ease,
+      filter 180ms ease !important;
+  }
+
+  .product-card:hover .product-model {
+    transform:
+      translateX(-50%)
+      scale(1.035) !important;
+
+    filter:
+      drop-shadow(
+        0 18px 18px
+        rgba(5, 20, 31, .38)
+      ) !important;
+  }
+
+
+  /*
+    REDLINE already has a larger resting scale.
+    Keep her current size/position, then give her
+    the same subtle additional hover growth.
+  */
+  .product-card[data-model="model-6"] .product-model {
+    transform:
+      translateX(-50%)
+      scale(1.045) !important;
+
+    transform-origin:
+      center bottom !important;
+
+    margin-bottom:
+      -14px !important;
+  }
+
+  .product-card[data-model="model-6"]:hover .product-model {
+    transform:
+      translateX(-50%)
+      scale(1.080) !important;
+
+    margin-bottom:
+      -14px !important;
+
+    filter:
+      drop-shadow(
+        0 18px 18px
+        rgba(5, 20, 31, .38)
+      ) !important;
+  }
+
+}
+
+/* ===== FROID ALL-MODEL DESKTOP HOVER END ===== */
