@@ -946,67 +946,290 @@ body {
 
 
 
-/* ===== FROID PIXEL-PRECISION STAGE START ===== */
 
-/*
-  JS now controls exact x/y position using the visible pixels.
-  These rules provide the stable stage only.
-*/
+
+
+/* ===== FROID CONTROLLED GROUNDING V2 START ===== */
+
+
+/* ========================================================
+   SEARCH + SETTINGS + FILTERS — ONE DESKTOP ROW
+   ======================================================== */
+
+@media (min-width: 851px) {
+
+  .catalog-toolbar {
+    width: 100% !important;
+
+    display: flex !important;
+    grid-template-columns: none !important;
+
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    margin-bottom: 24px !important;
+  }
+
+
+  .search-cluster {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(180px, 1fr)
+      56px !important;
+
+    gap: 7px !important;
+  }
+
+
+  .search-control {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    height: 56px !important;
+
+    border-radius: 16px !important;
+  }
+
+
+  .filter-tools {
+    width: 56px !important;
+    height: 56px !important;
+
+    flex: 0 0 56px !important;
+  }
+
+
+  .filter-group {
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    height: 56px !important;
+
+    padding: 6px !important;
+
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    gap: 4px !important;
+
+    overflow: visible !important;
+  }
+
+
+  .filter {
+    min-width: 43px !important;
+
+    height: 42px !important;
+
+    padding:
+      0 10px !important;
+
+    font-size: 8px !important;
+
+    white-space: nowrap !important;
+  }
+
+}
+
+
+/* ========================================================
+   MODEL + PLATFORM STAGE
+   NO IMAGE ANALYSIS.
+   NO AUTOMATIC GEOMETRY.
+   ======================================================== */
 
 .stage {
-  height: 420px !important;
+  height: 410px !important;
+
   position: relative !important;
+
   overflow: visible !important;
 }
 
+
+/*
+  Larger platform.
+  Complete platform object stays centered.
+*/
 .mountain-stage {
   position: absolute !important;
+
+  width: 116% !important;
   max-width: none !important;
+
+  height: auto !important;
+
+  left: 50% !important;
+
+  top: auto !important;
+  bottom: 0 !important;
+
+  transform:
+    translateX(-50%) !important;
+
   object-fit: contain !important;
-  object-position: center bottom !important;
+
+  object-position:
+    center bottom !important;
 }
 
+
+/*
+  The two supplied platform designs have
+  slightly different center-shelf heights.
+*/
+.product-card.platform-a {
+  --foot: 31.0cqw !important;
+}
+
+
+.product-card.platform-b {
+  --foot: 25.4cqw !important;
+}
+
+
+/*
+  Individual tiny corrections.
+
+  These are intentionally SMALL.
+  We are not repositioning whole scenes anymore.
+
+  Negative air space is removed by lowering
+  the visible model a few pixels into the snow.
+*/
+.product-card[data-model="model-1"] {
+  --model-drop: 4px;
+}
+
+.product-card[data-model="model-2"] {
+  --model-drop: 5px;
+}
+
+.product-card[data-model="model-3"] {
+  --model-drop: 4px;
+}
+
+.product-card[data-model="model-4"] {
+  --model-drop: 5px;
+}
+
+.product-card[data-model="model-5"] {
+  --model-drop: 5px;
+}
+
+.product-card[data-model="model-6"] {
+  --model-drop: 4px;
+}
+
+.product-card[data-model="model-7"] {
+  --model-drop: 5px;
+}
+
+.product-card[data-model="model-8"] {
+  --model-drop: 5px;
+}
+
+.product-card[data-model="model-9"] {
+  --model-drop: 5px;
+}
+
+
+/*
+  Model remains centered over its current platform.
+*/
 .product-model {
   position: absolute !important;
-  max-width: none !important;
-  object-fit: contain !important;
-  object-position: center bottom !important;
+
   z-index: 4 !important;
+
+  left: 50% !important;
+
+  top: auto !important;
+
+  bottom:
+    calc(
+      var(--foot) -
+      var(--model-drop, 4px)
+    ) !important;
+
+  width: auto !important;
+
+  height: 360px !important;
+
+  max-width: 92% !important;
+
+  transform:
+    translateX(-50%) !important;
+
+  object-fit: contain !important;
+
+  object-position:
+    center bottom !important;
+
+  filter:
+    drop-shadow(
+      0 14px 13px
+      rgba(5, 20, 31, .30)
+    ) !important;
 }
 
+
 /*
-  Do not lift the person on hover.
-  Feet remain physically planted.
+  Absolutely no hover lift.
+  Once feet are planted they remain planted.
 */
 .product-card:hover .product-model {
-  transform: none !important;
+  transform:
+    translateX(-50%) !important;
 }
 
-/*
-  Product information remains centered beneath its own stage.
-*/
-.product-info,
-.product-meta {
-  position: relative;
-  z-index: 8;
+
+/* Keep 3 × 3 desktop structure */
+@media (min-width: 851px) {
+
+  .collection-row,
+  .collection-row.row-b,
+  .collection-row.row-c {
+
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      ) !important;
+
+    gap:
+      clamp(
+        18px,
+        1.6vw,
+        28px
+      ) !important;
+  }
+
 }
 
+
+/* Larger displays */
 @media (min-width: 1440px) {
+
   .stage {
-    height: 450px !important;
+    height: 440px !important;
   }
+
+  .product-model {
+    height: 385px !important;
+  }
+
 }
 
-@media (min-width: 851px) and (max-width: 1180px) {
-  .stage {
-    height: 390px !important;
-  }
-}
 
-@media (max-width: 850px) {
-  .stage {
-    height: 390px !important;
-  }
-}
-
-/* ===== FROID PIXEL-PRECISION STAGE END ===== */
+/* ===== FROID CONTROLLED GROUNDING V2 END ===== */
