@@ -1249,7 +1249,7 @@ body {
 .product-card[data-model="model-6"] .product-model {
   transform: translateX(-50%) scale(1.045) !important;
   transform-origin: center bottom !important;
-  margin-bottom: -10px !important;
+  margin-bottom: -14px !important;
 }
 
 .product-card[data-model="model-6"]:hover .product-model {
