@@ -2178,425 +2178,225 @@ body {
 /* ===== FROID EDITORIAL CAMPAIGN SECTION END ===== */
 
 
-/* ===== FROID CATEGORY CARD BREAKOUT FIX START ===== */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== FROID EXACT REGISTERED CUTOUT START ===== */
 
 @media (min-width: 851px) {
 
   /*
-    Keep the large banner exactly where it is.
-    Only adjust the lower four cards.
+    The source images all use the same 1555 × 2000 canvas.
+
+    Approximately the upper 12% is the breakout region.
+
+    EVERY category uses this SAME value.
+    No per-card correction is allowed.
   */
   .editorial-categories {
+    --froid-source-crop: 12%;
+
     width: 100% !important;
 
-    margin-top: -2px !important;
     padding: 0 !important;
 
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr)) !important;
 
-    column-gap: 2px !important;
-    row-gap: 0 !important;
+    gap: 2px !important;
 
     align-items: end !important;
   }
 
 
   /*
-    Outer edges of first and last card align with banner.
-    Let subjects break out above the top edge.
+    The visible card represents the lower 88%
+    of the original 1555×2000 source canvas.
+
+    2000 × .88 = 1760
   */
   .editorial-category {
-    overflow: visible !important;
-    background: transparent !important;
-    isolation: isolate !important;
-  }
-
-
-  /*
-    Shift the source images upward so the transparent / dark
-    empty tops no longer sit inside the cards.
-    This creates the "break out into the banner" effect.
-  */
-  .editorial-category img {
     position: relative !important;
-    z-index: 1 !important;
 
     width: 100% !important;
+
     height: auto !important;
 
-    transform: translateY(var(--breakout-lift, -72px)) !important;
-    transform-origin: center top !important;
+    aspect-ratio:
+      1555 / 1760 !important;
 
-    transition:
-      transform .45s cubic-bezier(.2,.7,.2,1),
-      filter .35s ease !important;
+    margin: 0 !important;
+
+    overflow: visible !important;
+
+    isolation: isolate !important;
+
+    background:
+      #17364c !important;
+  }
+
+
+  /* ======================================================
+     BASE WINDOW
+
+     This is the card itself.
+
+     It clips anything above the exact card boundary.
+     ====================================================== */
+
+  .editorial-base-window {
+    position: absolute !important;
+
+    z-index: 1 !important;
+
+    inset: 0 !important;
+
+    overflow: hidden !important;
+
+    pointer-events: none !important;
+  }
+
+
+  /* ======================================================
+     BOTH IMAGES USE IDENTICAL GEOMETRY
+
+     This is the critical rule.
+
+     Same width.
+     Same height.
+     Same left.
+     Same top.
+     Same transform.
+     Same aspect ratio.
+     ====================================================== */
+
+  .editorial-registered-image {
+    position: absolute !important;
+
+    left: 0 !important;
+
+    /*
+      Full original image is 2000px tall while
+      the visible card represents 1760px.
+
+      2000 / 1760 = 1.13636
+    */
+    width: 100% !important;
+
+    height: 113.6363636% !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    object-fit: fill !important;
+
+    object-position:
+      left top !important;
+
+    /*
+      Move the original 2000px coordinate system upward
+      by the 240px breakout region.
+
+      240 / 1760 = 13.63636%
+    */
+    top: -13.6363636% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    transform-origin:
+      left top !important;
+
+    transition: none !important;
   }
 
 
   /*
-    Category-specific lift values
+    Base photo:
+    clipped by .editorial-base-window.
   */
-  .editorial-category:nth-child(1) {
-    --breakout-lift: -118px;   /* FUR */
-  }
+  .editorial-base-image {
+    z-index: 1 !important;
 
-  .editorial-category:nth-child(2) {
-    --breakout-lift: -102px;   /* WOMEN */
-  }
-
-  .editorial-category:nth-child(3) {
-    --breakout-lift: -88px;    /* MEN */
-  }
-
-  .editorial-category:nth-child(4) {
-    --breakout-lift: -104px;   /* GOGGLES */
+    filter: none !important;
   }
 
 
   /*
-    Keep the gradient/text anchored to the card body.
+    Cutout:
+    EXACT SAME coordinates as base photo.
+
+    Since the parent card itself allows overflow,
+    the transparent cutout subject can extend
+    upward into the large campaign banner.
   */
-  .editorial-category-shade {
-    z-index: 2 !important;
-  }
+  .editorial-cutout-image {
+    z-index: 5 !important;
 
-  .editorial-category-copy {
-    z-index: 4 !important;
-    padding: 24px 18px 18px !important;
-  }
-
-
-  /*
-    Hover must preserve the breakout offset.
-  */
-  .editorial-category:hover img {
-    transform:
-      translateY(var(--breakout-lift, -72px))
-      scale(1.035) !important;
+    pointer-events: none !important;
 
     filter:
-      saturate(1.06)
-      contrast(1.03) !important;
-  }
-
-}
-
-/* ===== FROID CATEGORY CARD BREAKOUT FIX END ===== */
-
-
-/* ===== FROID CATEGORY BASELINE ALIGNMENT START ===== */
-
-@media (min-width: 851px) {
-
-  /*
-    FOUR CARDS:
-    one exact top/bottom structure,
-    one exact baseline.
-  */
-  .editorial-categories {
-    width: 100% !important;
-
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr)) !important;
-
-    gap: 2px !important;
-
-    align-items: end !important;
-
-    padding: 0 !important;
-  }
-
-
-  /*
-    Every card has IDENTICAL height.
-    This guarantees all four bottoms align perfectly.
-  */
-  .editorial-category {
-    position: relative !important;
-
-    height:
-      clamp(360px, 28vw, 475px) !important;
-
-    min-height: 0 !important;
-
-    align-self: end !important;
-
-    margin: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  /*
-    Images may rise ABOVE the card,
-    but their breakout does not affect the card dimensions.
-  */
-  .editorial-category img {
-    position: absolute !important;
-
-    z-index: 1 !important;
-
-    left: 0 !important;
-    bottom: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-
-    transform:
-      translateY(
-        var(--category-rise, -70px)
+      drop-shadow(
+        0 8px 12px
+        rgba(4, 20, 31, .16)
       ) !important;
-
-    transform-origin:
-      center bottom !important;
   }
 
 
   /*
-    Individual breakout amount only.
-    Bottom card baseline remains identical.
-  */
-  .editorial-category:nth-child(1) {
-    --category-rise: -92px;
-  }
+    Hide the portion of the cutout that falls
+    inside the box.
 
-  .editorial-category:nth-child(2) {
-    --category-rise: -84px;
-  }
-
-  .editorial-category:nth-child(3) {
-    --category-rise: -76px;
-  }
-
-  .editorial-category:nth-child(4) {
-    --category-rise: -86px;
-  }
-
-
-  /*
-    Gradient stays tied to the fixed card,
-    NOT to the floating subject image.
-  */
-  .editorial-category-shade {
-    position: absolute !important;
-
-    z-index: 2 !important;
-
-    inset: 0 !important;
-
-    pointer-events: none !important;
-  }
-
-
-  /*
-    EXACT SAME TEXT POSITION ON ALL FOUR.
-  */
-  .editorial-category-copy {
-    position: absolute !important;
-
-    z-index: 5 !important;
-
-    left: 50% !important;
-    right: auto !important;
-
-    bottom: 22px !important;
-
-    width: 100% !important;
-
-    padding: 0 18px !important;
-
-    transform:
-      translateX(-50%) !important;
-
-    text-align: center !important;
-  }
-
-
-  .editorial-category-copy h3 {
-    width: 100% !important;
-
-    margin:
-      0
-      auto
-      5px !important;
-
-    text-align: center !important;
-  }
-
-
-  .editorial-category-copy > span {
-    width: 100% !important;
-
-    margin:
-      0
-      auto
-      14px !important;
-
-    text-align: center !important;
-  }
-
-
-  .editorial-category-copy p {
-    width: 100% !important;
-
-    margin:
-      0
-      auto
-      13px !important;
-
-    text-align: center !important;
-  }
-
-
-  .editorial-category-copy strong {
-    margin:
-      0
-      auto !important;
-  }
-
-
-  /*
-    Hover retains each subject's breakout position.
-  */
-  .editorial-category:hover img {
-    transform:
-      translateY(
-        var(--category-rise, -70px)
-      )
-      scale(1.035) !important;
-  }
-
-}
-
-/* ===== FROID CATEGORY BASELINE ALIGNMENT END ===== */
-
-
-/* ===== FROID CATEGORY IMAGE BASELINE FINAL START ===== */
-
-@media (min-width: 851px) {
-
-  /*
-    All four cards share the exact same box.
-  */
-  .editorial-categories {
-    width: 100% !important;
-    padding: 0 !important;
-
-    display: grid !important;
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr)) !important;
-
-    gap: 2px !important;
-
-    align-items: end !important;
-  }
-
-
-  .editorial-category {
-    position: relative !important;
-
-    height:
-      clamp(360px, 28vw, 475px) !important;
-
-    margin: 0 !important;
-
-    align-self: end !important;
-
-    overflow: visible !important;
-  }
-
-
-  /*
-    CRITICAL FIX:
-
-    Every source image is locked to the SAME bottom: 0.
-
-    We are no longer translating images upward.
-
-    Breakout happens by scaling FROM THE BOTTOM,
-    so the bottom edge never moves.
-  */
-  .editorial-category img {
-    position: absolute !important;
-
-    z-index: 1 !important;
-
-    left: 0 !important;
-    right: auto !important;
-
-    top: auto !important;
-    bottom: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    margin: 0 !important;
-
-    transform:
-      scale(var(--category-scale, 1.08)) !important;
-
-    transform-origin:
-      center bottom !important;
-
-    object-fit: contain !important;
-    object-position:
-      center bottom !important;
-
-    transition:
-      transform .4s
-      cubic-bezier(.2,.7,.2,1),
-      filter .3s ease !important;
-  }
-
-
-  /*
-    Slight individual scaling only to make the
-    subjects break upward naturally.
+    Only the part ABOVE the card is drawn.
 
     IMPORTANT:
-    bottom remains identical for every image.
+    the image itself is NOT moved or resized.
   */
+  .editorial-cutout-image {
+    clip-path:
+      inset(
+        0
+        0
+        88%
+        0
+      ) !important;
 
-  .editorial-category:nth-child(1) {
-    --category-scale: 1.12;
-  }
-
-  .editorial-category:nth-child(2) {
-    --category-scale: 1.10;
-  }
-
-  .editorial-category:nth-child(3) {
-    --category-scale: 1.08;
-  }
-
-  .editorial-category:nth-child(4) {
-    --category-scale: 1.10;
+    overflow: visible !important;
   }
 
 
   /*
-    The dark/text overlay itself also uses the
-    exact same bottom baseline.
+    Existing card shading and typography
+    stay above the base image but below
+    nothing that affects registration.
   */
   .editorial-category-shade {
     position: absolute !important;
 
     z-index: 2 !important;
 
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    top: 0 !important;
+    inset: 0 !important;
+
+    pointer-events: none !important;
   }
 
 
   .editorial-category-copy {
     position: absolute !important;
 
-    z-index: 5 !important;
+    z-index: 7 !important;
 
     left: 0 !important;
     right: 0 !important;
@@ -2605,161 +2405,38 @@ body {
 
     width: 100% !important;
 
-    padding:
-      0 18px !important;
-
     transform: none !important;
 
     text-align: center !important;
   }
 
 
-  .editorial-category-copy h3,
-  .editorial-category-copy > span,
-  .editorial-category-copy p {
-    width: 100% !important;
-
-    text-align: center !important;
-  }
-
-
   /*
-    Hover also scales from the bottom.
-    The baseline therefore NEVER changes.
+    REMOVE ALL CATEGORY IMAGE HOVER MOVEMENT.
+
+    Registration must remain pixel-for-pixel stable.
   */
-  .editorial-category:hover img {
-    transform:
-      scale(
-        calc(
-          var(--category-scale, 1.08) + .025
-        )
-      ) !important;
-
-    transform-origin:
-      center bottom !important;
-  }
-
-}
-
-/* ===== FROID CATEGORY IMAGE BASELINE FINAL END ===== */
-
-
-/* ===== FROID CATEGORY CUTOUT OVERLAYS START ===== */
-
-@media (min-width: 851px) {
-
-  /*
-    Keep the cards themselves aligned and unchanged.
-    The boxed images remain inside the cards.
-  */
-  .editorial-categories {
-    width: 100% !important;
-    padding: 0 !important;
-    gap: 2px !important;
-    align-items: end !important;
-  }
-
-  .editorial-category {
-    position: relative !important;
-    overflow: visible !important;
-    height: clamp(360px, 28vw, 475px) !important;
-    margin: 0 !important;
-    isolation: isolate !important;
-  }
-
-  /*
-    ORIGINAL CARD IMAGE:
-    stays in the box, same boxed treatment.
-  */
-  .editorial-category > img:not(.editorial-cutout) {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
+  .editorial-category:hover
+  .editorial-registered-image {
     transform: none !important;
-    display: block !important;
-    z-index: 1 !important;
-  }
 
-  .editorial-category-shade {
-    z-index: 2 !important;
-  }
+    width: 100% !important;
 
-  .editorial-category-copy {
-    z-index: 6 !important;
-  }
-
-  /*
-    CUTOUT OVERLAYS:
-    separate layer above each card.
-    This creates the breakout effect
-    without changing the boxed image.
-  */
-  .editorial-cutout {
-    position: absolute !important;
-    left: 50% !important;
-    bottom: 0 !important;
-
-    width: auto !important;
-    height: auto !important;
-
-    transform: translateX(-50%) !important;
-    transform-origin: center bottom !important;
-
-    pointer-events: none !important;
-    z-index: 4 !important;
-
-    filter: drop-shadow(0 10px 18px rgba(3, 18, 29, .22));
-  }
-
-  /*
-    Per-image placement.
-    These sit on TOP of the boxes, while the
-    boxed images stay untouched underneath.
-  */
-  .editorial-cutout-fur {
-    width: 88% !important;
-    bottom: 0 !important;
-  }
-
-  .editorial-cutout-women {
-    width: 108% !important;
-    bottom: 0 !important;
-  }
-
-  .editorial-cutout-men {
-    width: 112% !important;
-    bottom: 0 !important;
-  }
-
-  .editorial-cutout-goggles {
-    width: 106% !important;
-    bottom: 0 !important;
-  }
-
-  /*
-    Hover remains subtle.
-  */
-  .editorial-category:hover > img:not(.editorial-cutout) {
-    transform: scale(1.02) !important;
-  }
-
-  .editorial-category:hover .editorial-cutout {
-    transform: translateX(-50%) scale(1.02) !important;
+    height: 113.6363636% !important;
   }
 
 }
 
-/*
-  Mobile stays clean for now.
-  No breakout overlays on small screens.
+
+/* Mobile stays as the original card presentation
+   until desktop registration is approved.
 */
 @media (max-width: 850px) {
-  .editorial-cutout {
+
+  .editorial-cutout-image {
     display: none !important;
   }
+
 }
 
-/* ===== FROID CATEGORY CUTOUT OVERLAYS END ===== */
+/* ===== FROID EXACT REGISTERED CUTOUT END ===== */
