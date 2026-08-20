@@ -1623,3 +1623,556 @@ body {
 }
 
 /* ===== FROID AURORA JACKET SIZE FIX END ===== */
+
+
+
+/* ===== FROID EDITORIAL CAMPAIGN SECTION START ===== */
+
+
+/* ==========================================================
+   SECTION
+   Pulls upward into the clothing collection above.
+   ========================================================== */
+
+.editorial-campaign {
+  position: relative;
+
+  z-index: 12;
+
+  width: 100%;
+
+  padding:
+    0
+    clamp(18px, 2.7vw, 52px)
+    100px;
+
+  margin-top: -72px;
+}
+
+
+/* ==========================================================
+   MAIN CAMPAIGN BANNER
+   ========================================================== */
+
+.editorial-hero {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 1;
+
+  filter:
+    drop-shadow(
+      0 28px 38px
+      rgba(3, 19, 31, .28)
+    );
+}
+
+
+.editorial-hero-art {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+}
+
+
+/*
+  Real clickable button placed over the visual
+  button in the supplied campaign composition.
+*/
+.editorial-hero-button {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 50%;
+  top: 68%;
+
+  transform:
+    translate(-50%, -50%);
+
+  min-width: 180px;
+
+  padding:
+    14px 24px;
+
+  border:
+    1px solid
+    rgba(239, 248, 253, .72);
+
+  background:
+    rgba(14, 38, 57, .56);
+
+  backdrop-filter:
+    blur(6px);
+
+  color:
+    rgba(248, 252, 255, .96);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: .15em;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    border-color .2s ease;
+}
+
+
+.editorial-hero-button:hover {
+  background:
+    rgba(235, 246, 252, .92);
+
+  border-color:
+    rgba(235, 246, 252, .98);
+
+  color:
+    #24475f;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.035);
+}
+
+
+
+/* ==========================================================
+   FOUR OVERLAPPING COLLECTION CARDS
+   ========================================================== */
+
+.editorial-categories {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 2px;
+
+  margin-top: -106px;
+
+  padding:
+    0
+    clamp(5px, .5vw, 10px);
+}
+
+
+.editorial-category {
+  position: relative;
+
+  display: block;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(234, 245, 251, .35);
+
+  background:
+    #18364c;
+
+  box-shadow:
+    0 20px 35px
+    rgba(5, 21, 32, .24);
+
+  isolation: isolate;
+}
+
+
+.editorial-category img {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform .45s
+    cubic-bezier(.2,.7,.2,1),
+    filter .35s ease;
+}
+
+
+.editorial-category-shade {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 20, 32, .02) 38%,
+      rgba(4, 20, 32, .24) 62%,
+      rgba(3, 17, 28, .88) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+.editorial-category-copy {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding:
+    24px
+    20px
+    22px;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+.editorial-category-copy h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(24px, 2.3vw, 38px);
+
+  font-weight: 400;
+
+  line-height: .92;
+
+  letter-spacing: -.025em;
+
+  text-shadow:
+    0 3px 15px
+    rgba(0,0,0,.28);
+}
+
+
+.editorial-category-copy > span {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 8px;
+
+  letter-spacing: .26em;
+
+  opacity: .85;
+}
+
+
+.editorial-category-copy p {
+  margin:
+    16px 0 13px;
+
+  font-size: 7px;
+
+  letter-spacing: .12em;
+
+  color:
+    rgba(245, 250, 253, .76);
+}
+
+
+.editorial-category-copy strong {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 94px;
+
+  height: 30px;
+
+  padding:
+    0 14px;
+
+  border:
+    1px solid
+    rgba(244, 249, 252, .60);
+
+  background:
+    rgba(7, 25, 39, .35);
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: .15em;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+
+.editorial-category:hover img {
+  transform:
+    scale(1.045);
+
+  filter:
+    saturate(1.06)
+    contrast(1.03);
+}
+
+
+.editorial-category:hover
+.editorial-category-copy strong {
+  background:
+    rgba(246, 251, 253, .94);
+
+  color:
+    #24465d;
+}
+
+
+
+/* ==========================================================
+   LARGE DESKTOP
+   ========================================================== */
+
+@media (min-width: 1500px) {
+
+  .editorial-campaign {
+    margin-top: -82px;
+  }
+
+  .editorial-categories {
+    margin-top: -126px;
+  }
+
+  .editorial-category-copy {
+    padding-bottom: 28px;
+  }
+
+}
+
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (
+  min-width: 851px
+) and (
+  max-width: 1100px
+) {
+
+  .editorial-campaign {
+    margin-top: -48px;
+  }
+
+  .editorial-categories {
+    margin-top: -76px;
+  }
+
+  .editorial-category-copy {
+    padding:
+      18px 11px 16px;
+  }
+
+  .editorial-category-copy p {
+    display: none;
+  }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+   Top hero preserved.
+   Category cards become a swipeable peek carousel.
+   ========================================================== */
+
+@media (max-width: 850px) {
+
+  .editorial-campaign {
+    padding:
+      0
+      14px
+      70px;
+
+    margin-top: -30px;
+  }
+
+
+  .editorial-hero {
+    width:
+      calc(100% + 28px);
+
+    margin-left: -14px;
+
+    overflow: hidden;
+  }
+
+
+  /*
+    Slightly enlarge the campaign artwork
+    so the hero still feels cinematic on phones.
+  */
+  .editorial-hero-art {
+    width: 145%;
+
+    max-width: none;
+
+    margin-left: -22.5%;
+  }
+
+
+  .editorial-hero-button {
+    top: 70%;
+
+    min-width: 146px;
+
+    padding:
+      11px 16px;
+
+    font-size: 8px;
+  }
+
+
+  .editorial-categories {
+    width:
+      calc(100% + 28px);
+
+    margin-left: -14px;
+
+    margin-top: -48px;
+
+    padding:
+      0
+      14px
+      12px;
+
+    display: flex;
+
+    grid-template-columns: none;
+
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    scroll-snap-type:
+      x proximity;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width: none;
+  }
+
+
+  .editorial-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .editorial-category {
+    flex:
+      0 0 76vw;
+
+    width:
+      76vw;
+
+    scroll-snap-align:
+      start;
+  }
+
+
+  .editorial-category-copy {
+    padding:
+      22px
+      16px
+      20px;
+  }
+
+
+  .editorial-category-copy h3 {
+    font-size: 32px;
+  }
+
+
+  .editorial-category-copy p {
+    font-size: 7px;
+  }
+
+}
+
+
+
+/* ==========================================================
+   SMALL PHONE
+   ========================================================== */
+
+@media (max-width: 520px) {
+
+  .editorial-campaign {
+    margin-top: -18px;
+  }
+
+
+  .editorial-hero-art {
+    width: 165%;
+
+    margin-left: -32.5%;
+  }
+
+
+  .editorial-hero-button {
+    top: 71%;
+
+    min-width: 132px;
+
+    height: 36px;
+
+    padding:
+      0 13px;
+  }
+
+
+  .editorial-categories {
+    margin-top: -38px;
+  }
+
+
+  .editorial-category {
+    flex-basis: 80vw;
+
+    width: 80vw;
+  }
+
+}
+
+
+/* ===== FROID EDITORIAL CAMPAIGN SECTION END ===== */
