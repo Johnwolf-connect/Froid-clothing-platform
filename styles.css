@@ -2794,3 +2794,348 @@ body {
 
 
 /* ===== FROID HERO V3 CLEAN STACK END ===== */
+
+
+/* ===== FROID FOOTER STYLES START ===== */
+
+/* ==========================================
+   FROID FOOTER
+========================================== */
+
+.froid-footer {
+  position: relative;
+  margin-top: 56px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.froid-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 31, 48, 0.08) 0%,
+      rgba(8, 24, 38, 0.45) 14%,
+      rgba(5, 15, 26, 0.88) 36%,
+      rgba(3, 10, 18, 0.98) 100%
+    );
+  pointer-events: none;
+}
+
+.froid-footer-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 54px 40px 28px;
+  color: rgba(241, 247, 252, 0.95);
+}
+
+.froid-footer-top {
+  display: grid;
+  grid-template-columns: 1.45fr 0.9fr 0.9fr 1fr 1.2fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.froid-footer-brand {
+  max-width: 290px;
+}
+
+.froid-footer-logo-wrap {
+  margin-bottom: 22px;
+}
+
+.froid-footer-logo {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: .92;
+  letter-spacing: 0.03em;
+  color: #f7fbff;
+}
+
+.froid-footer-logo-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: 0.46em;
+  text-transform: uppercase;
+  color: rgba(228, 238, 247, 0.78);
+}
+
+.froid-footer-designed {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.froid-footer-designed-line {
+  width: 74px;
+  height: 1px;
+  background: rgba(228, 238, 247, 0.36);
+}
+
+.froid-footer-designed-copy {
+  font-size: 14px;
+  color: rgba(228, 238, 247, 0.78);
+}
+
+.froid-footer-designed-name {
+  font-size: 30px;
+  font-style: italic;
+  line-height: 1;
+  color: #f6fbff;
+}
+
+.froid-footer-intro {
+  margin: 0 0 24px;
+  max-width: 260px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(228, 238, 247, 0.82);
+}
+
+.froid-footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.froid-footer-social-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(238, 245, 250, 0.5);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  color: #ffffff;
+}
+
+.froid-footer-social-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.froid-footer-social-copy strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.froid-footer-social-copy span {
+  font-size: 14px;
+  color: rgba(228, 238, 247, 0.72);
+}
+
+.froid-footer-links h4,
+.froid-footer-values h4 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.froid-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.froid-footer-links li {
+  margin-bottom: 12px;
+}
+
+.froid-footer-links a {
+  text-decoration: none;
+  color: rgba(232, 240, 247, 0.88);
+  font-size: 16px;
+  line-height: 1.35;
+  transition: color .18s ease, opacity .18s ease;
+}
+
+.froid-footer-links a:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.froid-footer-values {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-left: 8px;
+}
+
+.froid-footer-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.froid-footer-value-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border: 1px solid rgba(238, 245, 250, 0.48);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #f5fbff;
+}
+
+.froid-footer-value h5 {
+  margin: 2px 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.froid-footer-value p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(228, 238, 247, 0.72);
+}
+
+.froid-footer-bottom {
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(228, 238, 247, 0.14);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.froid-footer-legal span {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(228, 238, 247, 0.62);
+}
+
+.froid-footer-policies {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.froid-footer-policies a {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(228, 238, 247, 0.68);
+  transition: color .18s ease;
+}
+
+.froid-footer-policies a:hover {
+  color: #ffffff;
+}
+
+.froid-footer-payments {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.froid-footer-payments span {
+  min-width: 56px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(228, 238, 247, 0.24);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(240, 246, 251, 0.04);
+  color: rgba(248, 251, 254, 0.92);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1200px) {
+  .froid-footer-top {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+
+  .froid-footer-values {
+    grid-column: 1 / -1;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .froid-footer-bottom {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .froid-footer-policies {
+    justify-content: flex-start;
+  }
+
+  .froid-footer-payments {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+  .froid-footer-shell {
+    padding: 42px 20px 24px;
+  }
+
+  .froid-footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .froid-footer-brand {
+    max-width: none;
+  }
+
+  .froid-footer-intro {
+    max-width: none;
+  }
+
+  .froid-footer-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .froid-footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .froid-footer-policies,
+  .froid-footer-payments {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== FROID FOOTER STYLES END ===== */
