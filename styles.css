@@ -3755,3 +3755,315 @@ body {
 }
 
 /* ===== FROID FOOTER LOGOS FINAL END ===== */
+
+
+/* ===== FROID HORIZONTAL FOOTER START ===== */
+
+/* =====================================================
+   DESKTOP + TABLET
+   Keep footer information in one horizontal composition.
+   ===================================================== */
+
+@media (min-width: 701px) {
+
+  .froid-footer-shell {
+    max-width: 1500px !important;
+    padding-left: 34px !important;
+    padding-right: 34px !important;
+  }
+
+  .froid-footer-top {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(220px, 1.35fr)
+      minmax(110px, .62fr)
+      minmax(110px, .62fr)
+      minmax(145px, .78fr)
+      minmax(250px, 1.35fr) !important;
+
+    gap: 24px !important;
+
+    align-items: start !important;
+  }
+
+  .froid-footer-brand {
+    max-width: 270px !important;
+  }
+
+  .froid-footer-logo-wrap {
+    max-width: 200px !important;
+  }
+
+  .froid-footer-logo-image {
+    width: 100% !important;
+  }
+
+  .froid-footer-designed {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  .froid-footer-designed-line {
+    flex-basis: 40px !important;
+  }
+
+  .froid-footer-designed-copy {
+    font-size: 11px !important;
+  }
+
+  .froid-footer-john-logo {
+    width: 110px !important;
+  }
+
+  .froid-footer-intro {
+    max-width: 230px !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  .froid-footer-social-copy strong {
+    font-size: 12px !important;
+  }
+
+  .froid-footer-social-copy span {
+    font-size: 11px !important;
+  }
+
+  .froid-footer-links h4 {
+    font-size: 13px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .froid-footer-links li {
+    margin-bottom: 8px !important;
+  }
+
+  .froid-footer-links a {
+    font-size: 12px !important;
+  }
+
+  /*
+    Values stay horizontal inside their final column
+    instead of dropping beneath the other columns.
+  */
+  .froid-footer-values {
+    grid-column: auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 18px !important;
+
+    padding-left: 0 !important;
+  }
+
+  .froid-footer-value {
+    gap: 10px !important;
+  }
+
+  .froid-footer-value-icon {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 14px !important;
+  }
+
+  .froid-footer-value h5 {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .froid-footer-value p {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  /*
+    Bottom row remains horizontal too.
+  */
+  .froid-footer-bottom {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(250px, 1fr)
+      auto
+      auto !important;
+
+    align-items: center !important;
+
+    gap: 22px !important;
+
+    justify-items: stretch !important;
+  }
+
+  .froid-footer-policies {
+    justify-content: center !important;
+  }
+
+  .froid-footer-payments {
+    justify-content: flex-end !important;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   Keep it much more horizontal than before:
+   two-column structure instead of one giant vertical stack.
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .froid-footer-shell {
+    padding:
+      34px
+      16px
+      22px !important;
+  }
+
+  .froid-footer-top {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap:
+      28px
+      18px !important;
+  }
+
+  /*
+    Brand uses full row.
+  */
+  .froid-footer-brand {
+    grid-column:
+      1 / -1 !important;
+
+    max-width:
+      none !important;
+  }
+
+  .froid-footer-logo-wrap {
+    max-width:
+      160px !important;
+  }
+
+  .froid-footer-designed {
+    flex-wrap:
+      nowrap !important;
+  }
+
+  .froid-footer-john-logo {
+    width:
+      105px !important;
+  }
+
+  .froid-footer-intro {
+    max-width:
+      290px !important;
+
+    font-size:
+      12px !important;
+  }
+
+  /*
+    Shop / About form first row.
+    Customer Care / Values form second row.
+  */
+  .froid-footer-links {
+    min-width:
+      0 !important;
+  }
+
+  .froid-footer-links h4 {
+    font-size:
+      12px !important;
+  }
+
+  .froid-footer-links a {
+    font-size:
+      11px !important;
+  }
+
+  .froid-footer-values {
+    grid-column:
+      auto !important;
+
+    display:
+      flex !important;
+
+    flex-direction:
+      column !important;
+
+    gap:
+      14px !important;
+  }
+
+  .froid-footer-value-icon {
+    width:
+      32px !important;
+
+    height:
+      32px !important;
+
+    min-width:
+      32px !important;
+  }
+
+  .froid-footer-value h5 {
+    font-size:
+      10px !important;
+  }
+
+  .froid-footer-value p {
+    font-size:
+      9px !important;
+  }
+
+  /*
+    Bottom stays compact/horizontal where possible.
+  */
+  .froid-footer-bottom {
+    display:
+      grid !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap:
+      14px !important;
+  }
+
+  .froid-footer-policies {
+    display:
+      flex !important;
+
+    flex-wrap:
+      wrap !important;
+
+    gap:
+      12px !important;
+
+    justify-content:
+      flex-start !important;
+  }
+
+  .froid-footer-payments {
+    display:
+      flex !important;
+
+    flex-wrap:
+      wrap !important;
+
+    gap:
+      7px !important;
+
+    justify-content:
+      flex-start !important;
+  }
+
+}
+
+/* ===== FROID HORIZONTAL FOOTER END ===== */
