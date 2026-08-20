@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#234157" />
   <title>Froid — New Collection</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=4" />
 </head>
 <body>
   <div class="site-shell">
@@ -57,22 +57,50 @@
 
           <div class="catalog-area">
             <div class="catalog-toolbar">
-              <label class="search-control">
-                <span>SEARCH</span>
-                <input id="product-search" type="search" placeholder="STYLE / COLOR / CODE" autocomplete="off" />
-              </label>
+
+              <div class="search-cluster">
+                <label class="search-control" aria-label="Search clothing">
+                  <span class="search-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="11" cy="11" r="6.5"></circle>
+                      <path d="M16 16L21 21"></path>
+                    </svg>
+                  </span>
+
+                  <input
+                    id="product-search"
+                    type="search"
+                    placeholder="Search style, color, or code..."
+                    autocomplete="off"
+                  />
+                </label>
+
+                <button class="filter-tools" type="button" aria-label="Filter collection">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7H20"></path>
+                    <path d="M4 17H20"></path>
+                    <path d="M4 12H20"></path>
+                    <circle cx="9" cy="7" r="2"></circle>
+                    <circle cx="15" cy="12" r="2"></circle>
+                    <circle cx="11" cy="17" r="2"></circle>
+                  </svg>
+                </button>
+              </div>
+
               <div class="filter-group" aria-label="Product filters">
                 <button class="filter is-active" type="button" data-filter="all">ALL</button>
                 <button class="filter" type="button" data-filter="light">LIGHT</button>
                 <button class="filter" type="button" data-filter="dark">DARK</button>
                 <button class="filter" type="button" data-filter="color">COLOR</button>
               </div>
+
             </div>
 
             <div class="product-landscape" aria-live="polite">
               <img class="ambient-mountains" src="./public/platforms/mountain-range.webp" alt="" />
               <div class="collection-row row-a" id="row-a"></div>
               <div class="collection-row row-b" id="row-b"></div>
+              <div class="collection-row row-c" id="row-c"></div>
               <p class="empty-state" id="empty-state" hidden>NO ITEMS MATCH THIS FILTER.</p>
             </div>
           </div>

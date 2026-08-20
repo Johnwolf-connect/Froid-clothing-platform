@@ -15,6 +15,7 @@ const empty = document.querySelector('#empty-state');
 const template = document.querySelector('#product-template');
 const rowA = document.querySelector('#row-a');
 const rowB = document.querySelector('#row-b');
+const rowC = document.querySelector('#row-c');
 let activeFilter = 'all';
 
 function buildCard(product, index) {
@@ -47,8 +48,9 @@ function buildCard(product, index) {
   return fragment;
 }
 
-products.slice(0, 4).forEach((product, index) => rowA.append(buildCard(product, index)));
-products.slice(4).forEach((product, index) => rowB.append(buildCard(product, index + 4)));
+products.slice(0, 3).forEach((product, index) => rowA.append(buildCard(product, index)));
+products.slice(3, 6).forEach((product, index) => rowB.append(buildCard(product, index + 3)));
+products.slice(6, 9).forEach((product, index) => rowC.append(buildCard(product, index + 6)));
 
 function applyFilters() {
   const q = search.value.trim().toLowerCase();
