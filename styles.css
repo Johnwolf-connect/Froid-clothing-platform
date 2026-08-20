@@ -2445,213 +2445,267 @@ body {
 
 
 
-/* ===== FROID HERO V2 OVERLAY START ===== */
 
 
-/* ---------------------------------------------------------
-   Banner image
-   --------------------------------------------------------- */
+
+/* ===== FROID HERO V3 CLEAN STACK START ===== */
+
+
+/* =====================================================
+   HERO FRAME
+   ===================================================== */
 
 .editorial-hero {
   position: relative !important;
+
   overflow: visible !important;
+
+  background:
+    transparent !important;
 }
 
 
 .editorial-hero-art {
+  position: relative !important;
+
+  z-index: 1 !important;
+
   display: block !important;
 
   width: 100% !important;
   height: auto !important;
 
-  position: relative !important;
-  z-index: 1 !important;
+  margin: 0 !important;
+
+  background:
+    transparent !important;
 }
 
 
-/* ---------------------------------------------------------
-   Central overlay
-   --------------------------------------------------------- */
+/* =====================================================
+   CENTER STACK
+   Logo
+   Tagline
+   Button
+   ===================================================== */
 
 .editorial-hero-content {
-  position: absolute;
+  position: absolute !important;
 
-  z-index: 8;
+  z-index: 8 !important;
 
-  left: 50%;
-  top: 45%;
+  left: 50% !important;
+  top: 48% !important;
 
   transform:
-    translate(-50%, -50%);
+    translate(-50%, -50%) !important;
 
   width:
-    min(38%, 480px);
+    min(31%, 390px) !important;
 
-  display: flex;
+  display: flex !important;
 
-  flex-direction: column;
+  flex-direction:
+    column !important;
 
-  align-items: center;
-  justify-content: center;
+  align-items:
+    center !important;
 
-  text-align: center;
+  justify-content:
+    center !important;
 
-  pointer-events: none;
+  gap: 0 !important;
+
+  text-align:
+    center !important;
+
+  pointer-events:
+    none !important;
 }
 
 
-/* ---------------------------------------------------------
-   Froid logo
-   --------------------------------------------------------- */
+/* =====================================================
+   LOGO
+   ===================================================== */
 
 .editorial-hero-logo {
-  display: block;
+  display: block !important;
 
-  width: 100%;
-  max-width: 430px;
+  width: 100% !important;
 
-  height: auto;
+  max-width:
+    330px !important;
 
-  margin: 0 auto;
+  height: auto !important;
 
-  object-fit: contain;
+  margin:
+    0 auto !important;
+
+  object-fit:
+    contain !important;
 
   filter:
     drop-shadow(
-      0 8px 18px
-      rgba(9, 25, 42, .24)
-    );
+      0 7px 15px
+      rgba(5, 19, 31, .28)
+    ) !important;
 }
 
 
-/* ---------------------------------------------------------
-   Tagline
-   --------------------------------------------------------- */
+/* =====================================================
+   TAGLINE
+   ===================================================== */
 
 .editorial-hero-tagline {
+  display: block !important;
+
+  width: 100% !important;
+
   margin:
-    8px 0 18px;
+    8px
+    0
+    18px !important;
 
   color:
-    rgba(248, 252, 255, .96);
+    rgba(250, 253, 255, .96) !important;
 
   font-size:
-    clamp(9px, .9vw, 14px);
+    clamp(8px, .74vw, 11px) !important;
 
-  font-weight: 500;
+  font-weight:
+    500 !important;
+
+  line-height:
+    1.25 !important;
 
   letter-spacing:
-    .35em;
+    .34em !important;
 
-  line-height: 1;
+  text-align:
+    center !important;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase !important;
 
   text-shadow:
-    0 4px 12px
-    rgba(5, 21, 35, .35);
+    0 3px 10px
+    rgba(5, 20, 33, .32) !important;
 }
 
 
-/* ---------------------------------------------------------
-   Button
-   --------------------------------------------------------- */
+/* =====================================================
+   BUTTON
+   ===================================================== */
 
 .editorial-hero-button {
-  pointer-events: auto;
+  position: static !important;
+
+  transform:
+    none !important;
+
+  pointer-events:
+    auto !important;
+
+  display:
+    inline-flex !important;
+
+  align-items:
+    center !important;
+
+  justify-content:
+    center !important;
+
+  width:
+    auto !important;
 
   min-width:
-    190px;
+    174px !important;
 
   height:
-    48px;
+    43px !important;
+
+  margin: 0 !important;
 
   padding:
-    0 25px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
+    0 22px !important;
 
   border:
     1px solid
-    rgba(245, 250, 253, .72);
+    rgba(247, 251, 253, .74) !important;
 
   background:
-    rgba(13, 35, 53, .42);
-
-  backdrop-filter:
-    blur(8px);
-
-  -webkit-backdrop-filter:
-    blur(8px);
+    rgba(12, 33, 50, .50) !important;
 
   color:
-    rgba(249, 252, 254, .98);
+    rgba(250, 253, 255, .98) !important;
 
   font-size:
-    9px;
+    8px !important;
 
-  font-weight: 700;
+  font-weight:
+    700 !important;
+
+  line-height:
+    1 !important;
 
   letter-spacing:
-    .17em;
+    .18em !important;
 
   text-transform:
-    uppercase;
+    uppercase !important;
 
-  cursor: pointer;
+  backdrop-filter:
+    blur(7px) !important;
+
+  -webkit-backdrop-filter:
+    blur(7px) !important;
 
   box-shadow:
-    inset 0 0 0 1px
-    rgba(255,255,255,.05),
-    0 10px 25px
-    rgba(4, 20, 33, .18);
+    0 9px 22px
+    rgba(4, 18, 30, .18) !important;
+
+  cursor:
+    pointer !important;
 
   transition:
-    transform .22s ease,
-    background .22s ease,
-    color .22s ease,
-    border-color .22s ease,
-    box-shadow .22s ease;
+    transform .2s ease,
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease !important;
 }
 
-
-/* ---------------------------------------------------------
-   Hover
-   --------------------------------------------------------- */
 
 .editorial-hero-button:hover {
   transform:
     translateY(-3px)
-    scale(1.035);
+    scale(1.035) !important;
 
   background:
-    rgba(245, 250, 253, .94);
+    rgba(247, 251, 253, .96) !important;
 
   color:
-    #24475f;
+    #23465e !important;
 
   border-color:
-    rgba(245, 250, 253, .98);
+    rgba(247, 251, 253, 1) !important;
 
   box-shadow:
-    0 14px 30px
-    rgba(4, 20, 33, .28);
+    0 14px 28px
+    rgba(4, 18, 30, .26) !important;
 }
 
 
 .editorial-hero-button:active {
   transform:
     translateY(-1px)
-    scale(1.015);
+    scale(1.015) !important;
 }
 
 
-/* ---------------------------------------------------------
-   Tablet
-   --------------------------------------------------------- */
+/* =====================================================
+   TABLET
+   ===================================================== */
 
 @media (
   min-width: 851px
@@ -2660,73 +2714,83 @@ body {
 ) {
 
   .editorial-hero-content {
-    width: 42%;
-  }
+    width:
+      34% !important;
 
-  .editorial-hero-button {
-    min-width: 160px;
-    height: 42px;
-  }
-
-}
-
-
-/* ---------------------------------------------------------
-   Mobile
-   --------------------------------------------------------- */
-
-@media (max-width: 850px) {
-
-  .editorial-hero-content {
-    width: 52%;
-    top: 48%;
+    top:
+      48% !important;
   }
 
   .editorial-hero-logo {
-    max-width: 270px;
+    max-width:
+      280px !important;
   }
 
   .editorial-hero-tagline {
     margin:
-      5px 0 12px;
-
-    font-size: 7px;
-
-    letter-spacing:
-      .25em;
+      6px
+      0
+      14px !important;
   }
 
   .editorial-hero-button {
-    min-width: 140px;
+    min-width:
+      154px !important;
 
-    height: 38px;
-
-    padding:
-      0 14px;
-
-    font-size: 7px;
+    height:
+      39px !important;
   }
 
 }
 
 
-@media (max-width: 520px) {
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 850px) {
 
   .editorial-hero-content {
-    width: 58%;
+    width:
+      44% !important;
+
+    top:
+      49% !important;
   }
 
   .editorial-hero-logo {
-    max-width: 220px;
+    max-width:
+      230px !important;
+  }
+
+  .editorial-hero-tagline {
+    margin:
+      5px
+      0
+      11px !important;
+
+    font-size:
+      6px !important;
+
+    letter-spacing:
+      .25em !important;
   }
 
   .editorial-hero-button {
-    min-width: 126px;
+    min-width:
+      130px !important;
 
-    height: 35px;
+    height:
+      34px !important;
+
+    padding:
+      0 12px !important;
+
+    font-size:
+      6px !important;
   }
 
 }
 
 
-/* ===== FROID HERO V2 OVERLAY END ===== */
+/* ===== FROID HERO V3 CLEAN STACK END ===== */
