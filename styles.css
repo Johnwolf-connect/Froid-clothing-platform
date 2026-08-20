@@ -3631,3 +3631,127 @@ body {
 }
 
 /* ===== FROID MOBILE CATEGORY TRANSPARENCY END ===== */
+
+
+/* ===== FROID FOOTER LOGOS FINAL START ===== */
+
+
+/* Froid wordmark image */
+.froid-footer-logo-wrap {
+  width: 100%;
+  max-width: 230px;
+  margin-bottom: 22px;
+}
+
+.froid-footer-logo-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  /*
+    PNG is white-on-transparent.
+    No text recreation.
+  */
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+
+/* Designed by + John Wolf signature/logo */
+.froid-footer-designed {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  flex-wrap: nowrap !important;
+
+  margin-bottom: 24px !important;
+}
+
+
+.froid-footer-designed-line {
+  flex: 0 0 64px;
+
+  height: 1px;
+
+  background:
+    rgba(232, 241, 248, .36);
+}
+
+
+.froid-footer-designed-copy {
+  flex: 0 0 auto;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  color:
+    rgba(229, 239, 247, .76);
+}
+
+
+.froid-footer-john-logo {
+  display: block;
+
+  width: 138px;
+  height: auto;
+
+  flex: 0 0 auto;
+
+  object-fit: contain;
+
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+
+/* ---------------------------------------------
+   MOBILE
+--------------------------------------------- */
+
+@media (max-width: 850px) {
+
+  .froid-footer-logo-wrap {
+    max-width: 190px;
+    margin-bottom: 18px;
+  }
+
+  .froid-footer-designed {
+    gap: 9px !important;
+  }
+
+  .froid-footer-designed-line {
+    flex-basis: 42px;
+  }
+
+  .froid-footer-designed-copy {
+    font-size: 11px;
+  }
+
+  .froid-footer-john-logo {
+    width: 116px;
+  }
+
+}
+
+
+/* extra narrow phones */
+@media (max-width: 420px) {
+
+  .froid-footer-designed {
+    flex-wrap: wrap !important;
+  }
+
+  .froid-footer-john-logo {
+    width: 126px;
+  }
+
+}
+
+/* ===== FROID FOOTER LOGOS FINAL END ===== */
