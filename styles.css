@@ -1235,23 +1235,26 @@ body {
 /* ===== FROID CONTROLLED GROUNDING V2 END ===== */
 
 
+
+
+
 /* ===== FROID REDLINE SOLO FIX START ===== */
 
 /*
   REDLINE only
-  - slightly bigger
-  - dimensions stay linked (uniform scale)
-  - bottom-center origin keeps feet moving downward naturally
-  - no stretching
+  - keep current size
+  - move her down more
+  - dimensions remain linked
 */
 .product-card[data-model="model-6"] .product-model {
   transform: translateX(-50%) scale(1.045) !important;
   transform-origin: center bottom !important;
+  margin-bottom: -10px !important;
 }
 
-/* Keep hover from overriding the planted position */
 .product-card[data-model="model-6"]:hover .product-model {
   transform: translateX(-50%) scale(1.045) !important;
+  margin-bottom: -10px !important;
 }
 
 /* ===== FROID REDLINE SOLO FIX END ===== */
