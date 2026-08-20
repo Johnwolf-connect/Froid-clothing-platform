@@ -2472,3 +2472,173 @@ body {
 }
 
 /* ===== FROID CATEGORY BASELINE ALIGNMENT END ===== */
+
+
+/* ===== FROID CATEGORY IMAGE BASELINE FINAL START ===== */
+
+@media (min-width: 851px) {
+
+  /*
+    All four cards share the exact same box.
+  */
+  .editorial-categories {
+    width: 100% !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 2px !important;
+
+    align-items: end !important;
+  }
+
+
+  .editorial-category {
+    position: relative !important;
+
+    height:
+      clamp(360px, 28vw, 475px) !important;
+
+    margin: 0 !important;
+
+    align-self: end !important;
+
+    overflow: visible !important;
+  }
+
+
+  /*
+    CRITICAL FIX:
+
+    Every source image is locked to the SAME bottom: 0.
+
+    We are no longer translating images upward.
+
+    Breakout happens by scaling FROM THE BOTTOM,
+    so the bottom edge never moves.
+  */
+  .editorial-category img {
+    position: absolute !important;
+
+    z-index: 1 !important;
+
+    left: 0 !important;
+    right: auto !important;
+
+    top: auto !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    transform:
+      scale(var(--category-scale, 1.08)) !important;
+
+    transform-origin:
+      center bottom !important;
+
+    object-fit: contain !important;
+    object-position:
+      center bottom !important;
+
+    transition:
+      transform .4s
+      cubic-bezier(.2,.7,.2,1),
+      filter .3s ease !important;
+  }
+
+
+  /*
+    Slight individual scaling only to make the
+    subjects break upward naturally.
+
+    IMPORTANT:
+    bottom remains identical for every image.
+  */
+
+  .editorial-category:nth-child(1) {
+    --category-scale: 1.12;
+  }
+
+  .editorial-category:nth-child(2) {
+    --category-scale: 1.10;
+  }
+
+  .editorial-category:nth-child(3) {
+    --category-scale: 1.08;
+  }
+
+  .editorial-category:nth-child(4) {
+    --category-scale: 1.10;
+  }
+
+
+  /*
+    The dark/text overlay itself also uses the
+    exact same bottom baseline.
+  */
+  .editorial-category-shade {
+    position: absolute !important;
+
+    z-index: 2 !important;
+
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+  }
+
+
+  .editorial-category-copy {
+    position: absolute !important;
+
+    z-index: 5 !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    bottom: 22px !important;
+
+    width: 100% !important;
+
+    padding:
+      0 18px !important;
+
+    transform: none !important;
+
+    text-align: center !important;
+  }
+
+
+  .editorial-category-copy h3,
+  .editorial-category-copy > span,
+  .editorial-category-copy p {
+    width: 100% !important;
+
+    text-align: center !important;
+  }
+
+
+  /*
+    Hover also scales from the bottom.
+    The baseline therefore NEVER changes.
+  */
+  .editorial-category:hover img {
+    transform:
+      scale(
+        calc(
+          var(--category-scale, 1.08) + .025
+        )
+      ) !important;
+
+    transform-origin:
+      center bottom !important;
+  }
+
+}
+
+/* ===== FROID CATEGORY IMAGE BASELINE FINAL END ===== */
