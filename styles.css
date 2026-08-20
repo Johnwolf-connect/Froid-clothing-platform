@@ -3569,3 +3569,65 @@ body {
 }
 
 /* ===== FROID MOBILE CATEGORY CAROUSEL V2 END ===== */
+
+
+/* ===== FROID MOBILE CATEGORY TRANSPARENCY START ===== */
+
+@media (max-width: 850px) {
+
+  /* outer row background */
+  .editorial-categories {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* each card shell */
+  .editorial-category {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(233,244,250,.18) !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+
+  /* any inner solid dark panel */
+  .editorial-base-window,
+  .editorial-breakout-window,
+  .editorial-category-panel,
+  .editorial-card-panel {
+    background: transparent !important;
+  }
+
+  /* remove the heavy dark-blue fill and use a lighter fade */
+  .editorial-category-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4, 19, 30, 0.00) 0%,
+        rgba(4, 19, 30, 0.06) 42%,
+        rgba(4, 19, 30, 0.26) 72%,
+        rgba(4, 19, 30, 0.52) 100%
+      ) !important;
+  }
+
+  /* text wrapper must not sit on a solid block */
+  .editorial-category-copy {
+    background: transparent !important;
+  }
+
+  /* button still visible */
+  .editorial-category-copy strong {
+    background: rgba(8, 23, 35, 0.18) !important;
+    border: 1px solid rgba(247,251,253,.62) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+
+  /* optional: let card image show more cleanly */
+  .editorial-base-image,
+  .editorial-category > img:not(.editorial-cutout-image) {
+    filter: none !important;
+  }
+}
+
+/* ===== FROID MOBILE CATEGORY TRANSPARENCY END ===== */
