@@ -1258,3 +1258,176 @@ body {
 }
 
 /* ===== FROID REDLINE SOLO FIX END ===== */
+
+
+/* ===== FROID MOBILE 2.5 CARD CAROUSEL START ===== */
+
+@media (max-width: 850px) {
+
+  /*
+    All 9 products become ONE continuous horizontal row.
+    The three desktop row wrappers disappear visually.
+  */
+  .product-landscape {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    align-items: flex-start !important;
+
+    gap: 14px !important;
+
+    padding:
+      8px 14px 18px 0 !important;
+
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+
+    scroll-snap-type: x proximity;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .product-landscape::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /*
+    Remove the three desktop row containers from layout,
+    allowing all nine cards to become siblings in one carousel.
+  */
+  .collection-row,
+  .collection-row.row-b,
+  .collection-row.row-c {
+    display: contents !important;
+  }
+
+
+  /*
+    2.5 cards visible:
+    each card is slightly under 40% of carousel width
+    so two full cards + half of the third are visible.
+  */
+  .product-card {
+    flex:
+      0 0
+      calc(40% - 11px) !important;
+
+    width:
+      calc(40% - 11px) !important;
+
+    min-width:
+      calc(40% - 11px) !important;
+
+    margin: 0 !important;
+
+    scroll-snap-align: start;
+  }
+
+
+  /*
+    Scale the product stage appropriately for the narrower
+    mobile card while keeping model/platform proportions.
+  */
+  .stage {
+    height: 285px !important;
+  }
+
+  .product-model {
+    height: 245px !important;
+    max-width: 92% !important;
+  }
+
+  .mountain-stage {
+    width: 116% !important;
+  }
+
+
+  /*
+    Product copy remains readable beneath each carousel card.
+  */
+  .product-info {
+    padding:
+      9px 3px 0 !important;
+
+    gap: 5px !important;
+  }
+
+  .product-info h3 {
+    font-size: 9px !important;
+  }
+
+  .product-subtitle {
+    font-size: 6px !important;
+  }
+
+  .product-price {
+    font-size: 7px !important;
+  }
+
+  .product-meta {
+    padding:
+      5px 3px 0 !important;
+
+    gap: 4px !important;
+
+    font-size: 5.5px !important;
+  }
+
+
+  /*
+    Background mountain overlay is unnecessary inside
+    the mobile carousel and competes visually with products.
+  */
+  .ambient-mountains {
+    display: none !important;
+  }
+
+
+  /*
+    Search-result empty message still works.
+  */
+  .empty-state {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  /*
+    Maintain the same 2.5-card concept even on smaller phones.
+  */
+  .product-card {
+    flex-basis:
+      calc(40% - 9px) !important;
+
+    width:
+      calc(40% - 9px) !important;
+
+    min-width:
+      calc(40% - 9px) !important;
+  }
+
+  .product-landscape {
+    gap: 12px !important;
+  }
+
+  .stage {
+    height: 270px !important;
+  }
+
+  .product-model {
+    height: 232px !important;
+  }
+
+}
+
+/* ===== FROID MOBILE 2.5 CARD CAROUSEL END ===== */
