@@ -941,3 +941,23 @@ body {
   }
 
 }
+
+
+/* ===== FROID PLATFORM CONTACT FIX START ===== */
+
+/* Platforms slightly larger, without changing the 3x3 layout */
+.mountain-stage {
+  width: 112% !important;
+  max-width: none !important;
+}
+
+/* Lower models so their feet visibly meet the snow surface */
+.product-card.platform-a {
+  --foot: 29.2cqw !important;
+}
+
+.product-card.platform-b {
+  --foot: 23.6cqw !important;
+}
+
+/* ===== FROID PLATFORM CONTACT FIX END ===== */
