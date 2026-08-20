@@ -1254,7 +1254,7 @@ body {
 
 .product-card[data-model="model-6"]:hover .product-model {
   transform: translateX(-50%) scale(1.045) !important;
-  margin-bottom: -10px !important;
+  margin-bottom: -14px !important;
 }
 
 /* ===== FROID REDLINE SOLO FIX END ===== */
