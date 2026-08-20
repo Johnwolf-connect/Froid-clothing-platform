@@ -943,21 +943,70 @@ body {
 }
 
 
-/* ===== FROID PLATFORM CONTACT FIX START ===== */
 
-/* Platforms slightly larger, without changing the 3x3 layout */
+
+
+/* ===== FROID PIXEL-PRECISION STAGE START ===== */
+
+/*
+  JS now controls exact x/y position using the visible pixels.
+  These rules provide the stable stage only.
+*/
+
+.stage {
+  height: 420px !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
 .mountain-stage {
-  width: 112% !important;
+  position: absolute !important;
   max-width: none !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
 }
 
-/* Lower models so their feet visibly meet the snow surface */
-.product-card.platform-a {
-  --foot: 29.2cqw !important;
+.product-model {
+  position: absolute !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  z-index: 4 !important;
 }
 
-.product-card.platform-b {
-  --foot: 23.6cqw !important;
+/*
+  Do not lift the person on hover.
+  Feet remain physically planted.
+*/
+.product-card:hover .product-model {
+  transform: none !important;
 }
 
-/* ===== FROID PLATFORM CONTACT FIX END ===== */
+/*
+  Product information remains centered beneath its own stage.
+*/
+.product-info,
+.product-meta {
+  position: relative;
+  z-index: 8;
+}
+
+@media (min-width: 1440px) {
+  .stage {
+    height: 450px !important;
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1180px) {
+  .stage {
+    height: 390px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .stage {
+    height: 390px !important;
+  }
+}
+
+/* ===== FROID PIXEL-PRECISION STAGE END ===== */
