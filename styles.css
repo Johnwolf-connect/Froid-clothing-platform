@@ -1588,3 +1588,38 @@ body {
 }
 
 /* ===== FROID AURORA JACKETS END ===== */
+
+
+/* ===== FROID AURORA JACKET SIZE FIX START ===== */
+
+/*
+  Larger jacket presentation.
+  Width controls both dimensions proportionally;
+  height remains automatic so nothing stretches.
+*/
+
+.campaign-jacket-fur {
+  width: 118% !important;
+  height: auto !important;
+
+  left: 50% !important;
+  top: -3% !important;
+
+  transform:
+    translateX(-50%)
+    rotate(-1deg) !important;
+}
+
+.campaign-jacket-purple {
+  width: 108% !important;
+  height: auto !important;
+
+  left: 50% !important;
+  top: 48% !important;
+
+  transform:
+    translateX(-50%)
+    rotate(2deg) !important;
+}
+
+/* ===== FROID AURORA JACKET SIZE FIX END ===== */
