@@ -2283,3 +2283,192 @@ body {
 }
 
 /* ===== FROID CATEGORY CARD BREAKOUT FIX END ===== */
+
+
+/* ===== FROID CATEGORY BASELINE ALIGNMENT START ===== */
+
+@media (min-width: 851px) {
+
+  /*
+    FOUR CARDS:
+    one exact top/bottom structure,
+    one exact baseline.
+  */
+  .editorial-categories {
+    width: 100% !important;
+
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 2px !important;
+
+    align-items: end !important;
+
+    padding: 0 !important;
+  }
+
+
+  /*
+    Every card has IDENTICAL height.
+    This guarantees all four bottoms align perfectly.
+  */
+  .editorial-category {
+    position: relative !important;
+
+    height:
+      clamp(360px, 28vw, 475px) !important;
+
+    min-height: 0 !important;
+
+    align-self: end !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /*
+    Images may rise ABOVE the card,
+    but their breakout does not affect the card dimensions.
+  */
+  .editorial-category img {
+    position: absolute !important;
+
+    z-index: 1 !important;
+
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    transform:
+      translateY(
+        var(--category-rise, -70px)
+      ) !important;
+
+    transform-origin:
+      center bottom !important;
+  }
+
+
+  /*
+    Individual breakout amount only.
+    Bottom card baseline remains identical.
+  */
+  .editorial-category:nth-child(1) {
+    --category-rise: -92px;
+  }
+
+  .editorial-category:nth-child(2) {
+    --category-rise: -84px;
+  }
+
+  .editorial-category:nth-child(3) {
+    --category-rise: -76px;
+  }
+
+  .editorial-category:nth-child(4) {
+    --category-rise: -86px;
+  }
+
+
+  /*
+    Gradient stays tied to the fixed card,
+    NOT to the floating subject image.
+  */
+  .editorial-category-shade {
+    position: absolute !important;
+
+    z-index: 2 !important;
+
+    inset: 0 !important;
+
+    pointer-events: none !important;
+  }
+
+
+  /*
+    EXACT SAME TEXT POSITION ON ALL FOUR.
+  */
+  .editorial-category-copy {
+    position: absolute !important;
+
+    z-index: 5 !important;
+
+    left: 50% !important;
+    right: auto !important;
+
+    bottom: 22px !important;
+
+    width: 100% !important;
+
+    padding: 0 18px !important;
+
+    transform:
+      translateX(-50%) !important;
+
+    text-align: center !important;
+  }
+
+
+  .editorial-category-copy h3 {
+    width: 100% !important;
+
+    margin:
+      0
+      auto
+      5px !important;
+
+    text-align: center !important;
+  }
+
+
+  .editorial-category-copy > span {
+    width: 100% !important;
+
+    margin:
+      0
+      auto
+      14px !important;
+
+    text-align: center !important;
+  }
+
+
+  .editorial-category-copy p {
+    width: 100% !important;
+
+    margin:
+      0
+      auto
+      13px !important;
+
+    text-align: center !important;
+  }
+
+
+  .editorial-category-copy strong {
+    margin:
+      0
+      auto !important;
+  }
+
+
+  /*
+    Hover retains each subject's breakout position.
+  */
+  .editorial-category:hover img {
+    transform:
+      translateY(
+        var(--category-rise, -70px)
+      )
+      scale(1.035) !important;
+  }
+
+}
+
+/* ===== FROID CATEGORY BASELINE ALIGNMENT END ===== */
