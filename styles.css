@@ -2440,3 +2440,162 @@ body {
 }
 
 /* ===== FROID EXACT REGISTERED CUTOUT END ===== */
+
+
+/* ===== FROID HERO CTA CLEANUP START ===== */
+
+/*
+  The campaign artwork already contains:
+
+  FROID logo
+  WINTER IS OUR ELEMENT
+  SHOP COLLECTION button
+
+  Do not visually redraw any of them.
+
+  The HTML link remains as an invisible,
+  accessible click target over the printed button.
+*/
+
+.editorial-hero-button {
+  position: absolute !important;
+
+  z-index: 8 !important;
+
+  left: 50% !important;
+  top: 68.7% !important;
+
+  transform:
+    translate(-50%, -50%) !important;
+
+  /*
+    Match the visual button already present
+    in the campaign artwork.
+  */
+  width:
+    clamp(150px, 15.2vw, 236px) !important;
+
+  height:
+    clamp(34px, 3.4vw, 52px) !important;
+
+  min-width: 0 !important;
+
+  padding: 0 !important;
+
+  /*
+    Completely invisible.
+    Removes the doubled border / doubled button.
+  */
+  border: 0 !important;
+
+  background:
+    transparent !important;
+
+  box-shadow:
+    none !important;
+
+  backdrop-filter:
+    none !important;
+
+  -webkit-backdrop-filter:
+    none !important;
+
+  /*
+    Hide duplicate SHOP COLLECTION text.
+    The text printed in the artwork remains visible.
+  */
+  color:
+    transparent !important;
+
+  font-size: 0 !important;
+
+  line-height: 0 !important;
+
+  text-shadow:
+    none !important;
+
+  opacity: 1 !important;
+
+  cursor: pointer !important;
+
+  transition: none !important;
+}
+
+
+/*
+  Do not create a visual hover layer.
+  The artwork remains completely clean.
+*/
+.editorial-hero-button:hover {
+  transform:
+    translate(-50%, -50%) !important;
+
+  background:
+    transparent !important;
+
+  border: 0 !important;
+
+  color:
+    transparent !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/*
+  Keyboard users still get a restrained focus indicator,
+  but only while navigating with the keyboard.
+*/
+.editorial-hero-button:focus {
+  outline: none !important;
+}
+
+
+.editorial-hero-button:focus-visible {
+  outline:
+    1px solid
+    rgba(245, 250, 253, .88) !important;
+
+  outline-offset:
+    4px !important;
+}
+
+
+/*
+  Preserve the campaign artwork itself exactly.
+*/
+.editorial-hero-art {
+  position: relative !important;
+
+  z-index: 1 !important;
+}
+
+
+/*
+  Mobile hotspot follows the printed button.
+*/
+@media (max-width: 850px) {
+
+  .editorial-hero-button {
+    top: 69.5% !important;
+
+    width: 142px !important;
+    height: 36px !important;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .editorial-hero-button {
+    top: 70% !important;
+
+    width: 128px !important;
+    height: 34px !important;
+  }
+
+}
+
+/* ===== FROID HERO CTA CLEANUP END ===== */
