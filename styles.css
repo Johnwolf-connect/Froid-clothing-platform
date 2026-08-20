@@ -2176,3 +2176,110 @@ body {
 
 
 /* ===== FROID EDITORIAL CAMPAIGN SECTION END ===== */
+
+
+/* ===== FROID CATEGORY CARD BREAKOUT FIX START ===== */
+
+@media (min-width: 851px) {
+
+  /*
+    Keep the large banner exactly where it is.
+    Only adjust the lower four cards.
+  */
+  .editorial-categories {
+    width: 100% !important;
+
+    margin-top: -2px !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    column-gap: 2px !important;
+    row-gap: 0 !important;
+
+    align-items: end !important;
+  }
+
+
+  /*
+    Outer edges of first and last card align with banner.
+    Let subjects break out above the top edge.
+  */
+  .editorial-category {
+    overflow: visible !important;
+    background: transparent !important;
+    isolation: isolate !important;
+  }
+
+
+  /*
+    Shift the source images upward so the transparent / dark
+    empty tops no longer sit inside the cards.
+    This creates the "break out into the banner" effect.
+  */
+  .editorial-category img {
+    position: relative !important;
+    z-index: 1 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    transform: translateY(var(--breakout-lift, -72px)) !important;
+    transform-origin: center top !important;
+
+    transition:
+      transform .45s cubic-bezier(.2,.7,.2,1),
+      filter .35s ease !important;
+  }
+
+
+  /*
+    Category-specific lift values
+  */
+  .editorial-category:nth-child(1) {
+    --breakout-lift: -118px;   /* FUR */
+  }
+
+  .editorial-category:nth-child(2) {
+    --breakout-lift: -102px;   /* WOMEN */
+  }
+
+  .editorial-category:nth-child(3) {
+    --breakout-lift: -88px;    /* MEN */
+  }
+
+  .editorial-category:nth-child(4) {
+    --breakout-lift: -104px;   /* GOGGLES */
+  }
+
+
+  /*
+    Keep the gradient/text anchored to the card body.
+  */
+  .editorial-category-shade {
+    z-index: 2 !important;
+  }
+
+  .editorial-category-copy {
+    z-index: 4 !important;
+    padding: 24px 18px 18px !important;
+  }
+
+
+  /*
+    Hover must preserve the breakout offset.
+  */
+  .editorial-category:hover img {
+    transform:
+      translateY(var(--breakout-lift, -72px))
+      scale(1.035) !important;
+
+    filter:
+      saturate(1.06)
+      contrast(1.03) !important;
+  }
+
+}
+
+/* ===== FROID CATEGORY CARD BREAKOUT FIX END ===== */
