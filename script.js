@@ -30,18 +30,6 @@ function buildCard(product, index) {
   card.classList.add(`platform-${product.platform}`);
   card.dataset.model = product.model.replace(/\.[^.]+$/, '');
   card.dataset.productId = product.id;
-  card.setAttribute('role', 'link');
-  card.setAttribute('tabindex', '0');
-  card.setAttribute('aria-label', `View ${product.name} details`);
-  card.addEventListener('click', () => {
-    window.location.href = `./product.html?id=${product.id}`;
-  });
-  card.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      window.location.href = `./product.html?id=${product.id}`;
-    }
-  });
 
   platform.src = `./public/platforms/platform-spaced-${product.platform}.webp`;
   model.src = `./public/models/${product.model}`;
@@ -58,6 +46,12 @@ function buildCard(product, index) {
   fragment.querySelector('.product-code').textContent = product.code;
   fragment.querySelector('.product-color').textContent = product.color;
   fragment.querySelector('.swatch').style.setProperty('--swatch', product.swatch);
+
+  const productLink = document.createElement('a');
+  productLink.className = 'product-hit-link';
+  productLink.href = `./product.html?id=${product.id}`;
+  productLink.setAttribute('aria-label', `View ${product.name} product details`);
+  card.appendChild(productLink);
 
   return fragment;
 }

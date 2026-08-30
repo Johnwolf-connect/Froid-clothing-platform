@@ -4013,3 +4013,50 @@ body {
 }
 
 /* ===== FROID CLEAN DESKTOP FOOTER END ===== */
+
+
+/* ===== FROID PRODUCT CARD LINK FIX START ===== */
+
+.product-card {
+  cursor: pointer !important;
+}
+
+/*
+  Real browser link covering the full product card.
+  Sits above visual layers, but stays transparent.
+*/
+.product-hit-link {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 50 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  cursor: pointer !important;
+
+  background: transparent !important;
+
+  text-decoration: none !important;
+}
+
+/*
+  Preserve the approved hover motion beneath the link.
+*/
+.product-card:hover .product-model {
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/*
+  Keyboard focus makes it clear the card is actionable.
+*/
+.product-hit-link:focus-visible {
+  outline: 1px solid rgba(240,249,253,.92) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+
+/* ===== FROID PRODUCT CARD LINK FIX END ===== */
