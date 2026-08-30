@@ -549,3 +549,107 @@ button,input,select{font:inherit}
     flex-direction:column;align-items:flex-start
   }
 }
+
+/* ===== FROID FULL-IMAGE PRESERVATION FIX START ===== */
+
+/*
+  Source assets are complete portrait compositions.
+  Preserve them exactly: no cover-cropping, no artificial zoom.
+*/
+
+/* Main PDP image */
+.product-stage {
+  aspect-ratio: 928 / 1152 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(214,240,252,.14), transparent 38%),
+    rgba(8,35,53,.38) !important;
+}
+
+.product-stage img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+.product-stage:hover img {
+  transform: none !important;
+}
+
+
+/* Thumbnail rail */
+.thumb {
+  aspect-ratio: 928 / 1152 !important;
+  background: rgba(7,31,48,.48) !important;
+}
+
+.thumb img {
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+
+/* Technical/detail panel */
+.tech-card {
+  overflow: hidden !important;
+}
+
+.tech-card img {
+  right: 0 !important;
+  top: 0 !important;
+  width: 58% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center right !important;
+  background: rgba(7,31,48,.18) !important;
+}
+
+
+/* Related product cards */
+.rec-card {
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.rec-card img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 928 / 1152 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: rgba(7,31,48,.48) !important;
+  transform: none !important;
+}
+
+.rec-card:hover img {
+  transform: none !important;
+}
+
+.rec-copy {
+  margin-top: auto !important;
+}
+
+
+/* Mobile: preserve exactly the same no-crop behavior */
+@media (max-width: 700px) {
+  .product-stage {
+    aspect-ratio: 928 / 1152 !important;
+    min-height: 0 !important;
+  }
+
+  .thumb img,
+  .product-stage img,
+  .rec-card img,
+  .tech-card img {
+    object-fit: contain !important;
+  }
+
+  .rec-card {
+    flex: 0 0 185px !important;
+  }
+}
+
+/* ===== FROID FULL-IMAGE PRESERVATION FIX END ===== */
+
