@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Froid — Checkout</title>
+<link rel="stylesheet" href="./commerce.css?v=1">
+</head>
+<body>
+<div class="froid-page">
+<header class="commerce-header">
+  <a class="logo" href="./index.html"><img src="./public/brand/froid-ice-logo.webp" alt="Froid"></a>
+  <nav class="commerce-nav">
+    <a href="./index.html#collection">Collection</a>
+    <a href="./index.html#collection">Outerwear</a>
+    <a href="./index.html#campaign">Campaign</a>
+  </nav>
+  <div class="header-actions">
+    <a class="icon-pill" href="./index.html#collection" aria-label="Search">⌕</a>
+    <a class="bag-link" href="./checkout.html">Bag <span class="bag-count" data-bag-count>00</span></a>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <section class="checkout-left">
+    <div class="progress">
+      <span>01. Cart</span><i class="progress-line"></i>
+      <span class="is-active" id="checkout-stage-label">02. Information</span><i class="progress-line"></i>
+      <span>03. Shipping</span><i class="progress-line"></i>
+      <span>04. Payment</span>
+    </div>
+
+    <h1 class="checkout-title">CHECKOUT</h1>
+
+    <div class="checkout-section">
+      <h2>Express Checkout</h2>
+      <div class="express">
+        <button class="express-btn shop-pay">shop Pay</button>
+        <button class="express-btn g-pay">G Pay</button>
+      </div>
+      <div class="or">OR</div>
+    </div>
+
+    <form id="checkout-form">
+      <div class="checkout-section">
+        <h2>Contact Information</h2>
+        <div class="form">
+          <input class="field" type="email" placeholder="Email address" required>
+        </div>
+        <label class="checkline"><input type="checkbox" checked> Email me with news and offers</label>
+      </div>
+
+      <div class="checkout-section">
+        <h2>Shipping Address</h2>
+        <div class="form">
+          <div class="form-grid">
+            <input class="field" placeholder="First name" required>
+            <input class="field" placeholder="Last name" required>
+          </div>
+          <input class="field" placeholder="Address" required>
+          <input class="field" placeholder="Apartment, suite, etc. (optional)">
+          <input class="field" placeholder="City" required>
+          <div class="form-grid">
+            <select class="field"><option>United States</option><option>Canada</option></select>
+            <select class="field"><option>Select state</option><option>New York</option><option>California</option></select>
+          </div>
+          <div class="form-grid">
+            <input class="field" placeholder="ZIP code" required>
+            <input class="field" placeholder="Phone">
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-section">
+        <h2>Shipping Method</h2>
+        <div class="shipping-options">
+          <label class="shipping-option is-active" data-price="0">
+            <input type="radio" name="ship" checked hidden>
+            <span class="radio"></span>
+            <span><b>Standard Shipping</b><span>5–7 Business Days</span></span>
+            <strong>FREE</strong>
+          </label>
+          <label class="shipping-option" data-price="12">
+            <input type="radio" name="ship" hidden>
+            <span class="radio"></span>
+            <span><b>Express Shipping</b><span>2–3 Business Days</span></span>
+            <strong>$12.00</strong>
+          </label>
+          <label class="shipping-option" data-price="25">
+            <input type="radio" name="ship" hidden>
+            <span class="radio"></span>
+            <span><b>Overnight Shipping</b><span>1 Business Day</span></span>
+            <strong>$25.00</strong>
+          </label>
+        </div>
+      </div>
+
+      <button class="continue-btn" type="submit">Continue to Payment</button>
+      <p id="checkout-message" hidden style="margin-top:14px;color:#d5edf8;font-size:11px">
+        Demo information accepted. Payment remains intentionally non-charging for this portfolio build.
+      </p>
+      <p style="text-align:center;margin-top:17px"><a href="./product.html" style="font-size:10px;text-decoration:none">← Return to product</a></p>
+    </form>
+  </section>
+
+  <aside class="checkout-summary">
+    <h2>Order Summary</h2>
+    <div id="checkout-items"></div>
+
+    <div class="discount-row">
+      <input class="field" id="discount-code" placeholder="Discount code or gift card">
+      <button class="apply-btn" type="button" data-apply-discount>Apply</button>
+    </div>
+
+    <div class="summary-totals">
+      <div class="total-row"><span>Subtotal</span><strong data-total-subtotal>$0.00</strong></div>
+      <div class="total-row"><span>Shipping</span><strong data-total-shipping>FREE</strong></div>
+      <div class="total-row"><span>Taxes</span><strong data-total-taxes>$0.00</strong></div>
+      <div class="total-row final"><span>Total</span><strong>USD&nbsp; <span data-total-total>$0.00</span></strong></div>
+    </div>
+
+    <div class="summary-assurances">
+      <div class="assurance"><i>▣</i><div><b>SECURE CHECKOUT</b><span>Your payment information is encrypted and secure.</span></div></div>
+      <div class="assurance"><i>↺</i><div><b>EASY RETURNS</b><span>30-day return policy for all orders.</span></div></div>
+    </div>
+  </aside>
+</main>
+
+<footer class="checkout-footer">
+  <div class="checkout-footer-grid">
+    <div>
+      <div class="footer-logo"><img src="./public/brand/froid-footer-logo.png" alt="Froid"></div>
+      <div class="footer-designed"><span>Designed by</span><img src="./public/brand/john-wolf-footer-logo.png" alt="John Wolf"></div>
+      <p style="font-size:9px;color:#b8cfda;line-height:1.55">@froid.clothing<br>Follow us on Instagram</p>
+    </div>
+    <div><h3>Shop</h3><a href="./index.html#collection">Fur Collection</a><a href="./index.html#collection">Women</a><a href="./index.html#collection">Men</a><a href="./index.html#collection">Goggles</a><a href="./index.html#collection">Accessories</a></div>
+    <div><h3>About</h3><a href="#">Our Story</a><a href="#">Sustainability</a><a href="#">Craftsmanship</a><a href="#">Careers</a><a href="#">Press</a></div>
+    <div><h3>Customer Care</h3><a href="#">Shipping & Delivery</a><a href="#">Returns & Exchanges</a><a href="#">Size Guide</a><a href="#">FAQ</a><a href="#">Contact Us</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Froid Clothing. All rights reserved.</span>
+    <span>Privacy Policy &nbsp;&nbsp; Terms of Service &nbsp;&nbsp; Accessibility</span>
+    <div class="paymarks"><span>VISA</span><span>MC</span><span>Apple Pay</span><span>PayPal</span><span>AMEX</span></div>
+  </div>
+</footer>
+</div>
+<script src="./commerce.js?v=1"></script>
+</body>
+</html>
