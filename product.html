@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Froid — Aurora™ Puffer</title>
-<link rel="stylesheet" href="./commerce.css?v=2">
+<title>Froid — Product</title>
+<link rel="stylesheet" href="./commerce.css?v=3">
 </head>
 <body>
-<div class="froid-page">
+<div class="froid-page" data-product-page>
 <header class="commerce-header">
   <a class="logo" href="./index.html"><img src="./public/brand/froid-ice-logo.webp" alt="Froid"></a>
   <nav class="commerce-nav">
@@ -16,7 +16,7 @@
     <a href="./index.html#campaign">Campaign</a>
   </nav>
   <div class="header-actions">
-    <a class="icon-pill" href="./index.html#collection" aria-label="Search">⌕</a>
+    <a class="icon-pill" href="./index.html#collection">⌕</a>
     <a class="bag-link" href="./checkout.html">Bag <span class="bag-count" data-bag-count>00</span></a>
   </div>
 </header>
@@ -24,48 +24,42 @@
 <div class="breadcrumb">
   <a href="./index.html">Home</a><span>›</span>
   <a href="./index.html#collection">Outerwear</a><span>›</span>
-  <span>Aurora™ Puffer</span>
+  <span data-product-name>Product</span>
 </div>
 
 <main>
 <section class="product-shell">
-  <aside class="thumb-rail" aria-label="Product gallery">
-    <button class="thumb is-active" data-gallery-src="./public/product/aurora-front.png"><img src="./public/product/aurora-front.png" alt="Aurora front"></button>
-    <button class="thumb" data-gallery-src="./public/product/aurora-back.png"><img src="./public/product/aurora-back.png" alt="Aurora back"></button>
-    <button class="thumb" data-gallery-src="./public/product/aurora-detail.png"><img src="./public/product/aurora-detail.png" alt="Aurora hood detail"></button>
-    <button class="thumb" data-gallery-src="./public/product/aurora-alt.png"><img src="./public/product/aurora-alt.png" alt="Aurora material detail"></button>
-    <button class="thumb thumb-play" type="button" aria-label="Campaign video">▶</button>
-  </aside>
+  <aside class="thumb-rail" id="product-gallery" aria-label="Product gallery"></aside>
 
   <div class="product-stage">
-    <img id="main-product-image" src="./public/product/aurora-front.png" alt="Aurora insulated puffer jacket">
+    <img id="main-product-image" src="" alt="">
     <span class="zoom-badge">⌕</span>
   </div>
 
   <aside class="product-panel">
     <span class="new-badge">New Arrival</span>
-    <h1>AURORA™</h1>
-    <p class="product-sub">Insulated Puffer Jacket</p>
-    <p class="product-price">$549.00</p>
+    <h1 data-product-name>PRODUCT</h1>
+    <p class="product-sub" data-product-subtitle></p>
+    <p class="product-price" data-product-price></p>
     <div class="rating"><span class="stars">★★★★★</span><span>4.8 (128 reviews)</span></div>
-    <p class="product-desc">
-      Engineered for extreme conditions. The Aurora™ Puffer delivers superior warmth,
-      water resistance, and futuristic style.
-    </p>
+    <p class="product-desc" data-product-description></p>
 
     <div class="option-block">
-      <div class="option-title"><span>Color: <b data-color-label>PRISM SHELL</b></span></div>
+      <div class="option-title"><span>Color: <b data-product-color-label></b></span></div>
       <div class="swatches">
-        <button class="swatch-btn sw-prism is-active" data-value="PRISM SHELL" aria-label="Prism Shell"><span></span></button>
-        <button class="swatch-btn sw-black" data-value="ONYX BLACK" aria-label="Onyx Black"><span></span></button>
-        <button class="swatch-btn sw-ice" data-value="ARCTIC WHITE" aria-label="Arctic White"><span></span></button>
-        <button class="swatch-btn sw-blue" data-value="FROST BLUE" aria-label="Frost Blue"><span></span></button>
-        <button class="swatch-btn sw-orange" data-value="EMBER ORANGE" aria-label="Ember Orange"><span></span></button>
+        <button class="swatch-btn sw-prism is-active" data-value=""><span></span></button>
+        <button class="swatch-btn sw-black" data-value="ONYX BLACK"><span></span></button>
+        <button class="swatch-btn sw-ice" data-value="ARCTIC WHITE"><span></span></button>
+        <button class="swatch-btn sw-blue" data-value="FROST BLUE"><span></span></button>
+        <button class="swatch-btn sw-orange" data-value="EMBER ORANGE"><span></span></button>
       </div>
     </div>
 
     <div class="option-block">
-      <div class="option-title"><span>Size: <b data-size-label>M</b></span><a href="#size-fit">⌁ Size Guide</a></div>
+      <div class="option-title">
+        <span>Size: <b data-size-label>M</b></span>
+        <a href="#size-fit">⌁ Size Guide</a>
+      </div>
       <div class="size-row">
         <button class="size-btn" data-value="XS">XS</button>
         <button class="size-btn" data-value="S">S</button>
@@ -78,7 +72,7 @@
 
     <div class="purchase-row">
       <button class="add-btn" data-add-bag>▢ &nbsp; Add to Bag</button>
-      <button class="heart-btn" aria-label="Favorite">♡</button>
+      <button class="heart-btn">♡</button>
     </div>
 
     <div class="trust-row">
@@ -99,45 +93,35 @@
     </div>
 
     <div class="tab-pane is-active" id="details">
-      <p>
-        The Aurora™ Puffer is built for peak performance in the harshest environments.
-        Featuring advanced insulation, a water-repellent shell, and functional design
-        details for maximum protection and mobility.
-      </p>
+      <p data-product-description></p>
       <ul class="feature-list">
         <li>♧ &nbsp; Waterproof & windproof outer shell</li>
-        <li>◉ &nbsp; Premium down alternative insulation</li>
+        <li>◉ &nbsp; Premium alternative insulation</li>
         <li>❄ &nbsp; Thermal heat-lock technology</li>
-        <li>◈ &nbsp; Adjustable hood & cuffs</li>
-        <li>▧ &nbsp; Multiple utility pockets</li>
-        <li>♙ &nbsp; Unisex style</li>
+        <li>◈ &nbsp; Adjustable protective construction</li>
+        <li>▧ &nbsp; Functional utility storage</li>
+        <li>♙ &nbsp; Froid unisex fit system</li>
       </ul>
     </div>
-    <div class="tab-pane" id="technology"><p>Prism Shell reflective laminate, thermal insulation mapping and reinforced weather-sealed construction.</p></div>
-    <div class="tab-pane" id="size-fit"><p>Relaxed technical silhouette. Select your usual size for the intended Froid fit.</p></div>
+    <div class="tab-pane" id="technology"><p>Froid technical construction balances insulation, weather protection and movement for severe winter environments.</p></div>
+    <div class="tab-pane" id="size-fit"><p>Choose your normal size for the intended Froid silhouette. Use the size selector above to save the selected fit to your bag.</p></div>
     <div class="tab-pane" id="shipping"><p>Complimentary standard shipping on qualifying orders. Demo returns accepted within 30 days.</p></div>
   </div>
 
   <div class="tech-card">
     <div class="tech-specs">
-      <div class="tech-spec"><i>♒</i><div><b>WATERPROOF</b><span>10,000mm</span></div></div>
-      <div class="tech-spec"><i>♨</i><div><b>BREATHABILITY</b><span>10,000g/m²/24hr</span></div></div>
-      <div class="tech-spec"><i>❄</i><div><b>INSULATION</b><span>-30°C / -22°F</span></div></div>
-      <div class="tech-spec"><i>▱</i><div><b>WEIGHT</b><span>1.2 KG</span></div></div>
+      <div class="tech-spec"><i>♒</i><div><b>WATERPROOF</b><span data-tech-value></span></div></div>
+      <div class="tech-spec"><i>♨</i><div><b>BREATHABILITY</b><span data-tech-value></span></div></div>
+      <div class="tech-spec"><i>❄</i><div><b>INSULATION</b><span data-tech-value></span></div></div>
+      <div class="tech-spec"><i>▱</i><div><b>WEIGHT</b><span data-tech-value></span></div></div>
     </div>
-    <img src="./public/product/aurora-detail.png" alt="Aurora technical detail">
+    <img id="tech-image" src="" alt="Product technical detail">
   </div>
 </section>
 
 <section class="recommendations">
   <h2>You May Also Like</h2>
-  <div class="rec-grid">
-    <a class="rec-card" href="./product.html"><img src="./public/product/dune-detail.png" alt=""><div class="rec-copy"><b>DUNE ZERO COAT</b><span>$1,040</span></div></a>
-    <a class="rec-card" href="./product.html"><img src="./public/product/aurora-alt.png" alt=""><div class="rec-copy"><b>POLAR MONO SUIT</b><span>$1,090</span></div></a>
-    <a class="rec-card" href="./product.html"><img src="./public/models/model-9.webp" alt=""><div class="rec-copy"><b>EMBER BLUE PUFFER</b><span>$1,160</span></div></a>
-    <a class="rec-card" href="./product.html"><img src="./public/models/model-4.webp" alt=""><div class="rec-copy"><b>GLACIER CLOUD JACKET</b><span>$840</span></div></a>
-    <a class="rec-card" href="./product.html"><img src="./public/product/solar-detail.png" alt=""><div class="rec-copy"><b>SOLAR ICE SUIT</b><span>$920</span></div></a>
-  </div>
+  <div class="rec-grid" id="related-products"></div>
 </section>
 
 <section class="value-strip">
@@ -147,6 +131,6 @@
 </section>
 </main>
 </div>
-<script src="./commerce.js?v=1"></script>
+<script src="./commerce.js?v=3"></script>
 </body>
 </html>

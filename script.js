@@ -1,13 +1,13 @@
 const products = [
-  { name: 'PRISM SHELL', subtitle: 'Reflective insulated set', price: '$980', code: 'FR-PS01', color: 'Iridescent', swatch: '#c7d5ef', group: 'color', model: 'model-2.webp', platform: 'a' },
-  { name: 'VIOLET VECTOR', subtitle: 'Technical shell system', price: '$1,120', code: 'FR-VV02', color: 'Violet / Black', swatch: '#7359b8', group: 'dark', model: 'model-3.webp', platform: 'b' },
-  { name: 'GLACIER CLOUD', subtitle: 'Faux-fur alpine jacket', price: '$840', code: 'FR-GC03', color: 'Ice Blue', swatch: '#5cbce9', group: 'color', model: 'model-4.webp', platform: 'a' },
-  { name: 'DUNE ZERO', subtitle: 'Long thermal puffer', price: '$1,040', code: 'FR-DZ04', color: 'Stone', swatch: '#c9bba8', group: 'light', model: 'model-5.webp', platform: 'b' },
-  { name: 'REDLINE', subtitle: 'Utility alpine system', price: '$1,180', code: 'FR-RL05', color: 'Red / Black', swatch: '#b5282b', group: 'dark', model: 'model-6.webp', platform: 'a' },
-  { name: 'SOLAR ICE', subtitle: 'Gloss technical puffer', price: '$920', code: 'FR-SI06', color: 'Yellow', swatch: '#e4c336', group: 'color', model: 'model-7.webp', platform: 'b' },
-  { name: 'POLAR MONO', subtitle: 'Extended cold coat', price: '$1,090', code: 'FR-PM07', color: 'Black / White', swatch: '#e9e9e9', group: 'light', model: 'model-8.webp', platform: 'a' },
-  { name: 'EMBER BLUE', subtitle: 'Long puffer system', price: '$1,160', code: 'FR-EB08', color: 'Orange / Blue', swatch: '#ec6f26', group: 'color', model: 'model-9.webp', platform: 'b' },
-  { name: 'AURORA FUR', subtitle: 'Cropped arctic fur', price: '$1,320', code: 'FR-AF09', color: 'Graphite', swatch: '#53575c', group: 'dark', model: 'model-1.webp', platform: 'a' },
+  { id: 'prism-shell', name: 'PRISM SHELL', subtitle: 'Reflective insulated set', price: '$980', code: 'FR-PS01', color: 'Iridescent', swatch: '#c7d5ef', group: 'color', model: 'model-2.webp', platform: 'a' },
+  { id: 'violet-vector', name: 'VIOLET VECTOR', subtitle: 'Technical shell system', price: '$1,120', code: 'FR-VV02', color: 'Violet / Black', swatch: '#7359b8', group: 'dark', model: 'model-3.webp', platform: 'b' },
+  { id: 'glacier-cloud', name: 'GLACIER CLOUD', subtitle: 'Faux-fur alpine jacket', price: '$840', code: 'FR-GC03', color: 'Ice Blue', swatch: '#5cbce9', group: 'color', model: 'model-4.webp', platform: 'a' },
+  { id: 'dune-zero', name: 'DUNE ZERO', subtitle: 'Long thermal puffer', price: '$1,040', code: 'FR-DZ04', color: 'Stone', swatch: '#c9bba8', group: 'light', model: 'model-5.webp', platform: 'b' },
+  { id: 'redline', name: 'REDLINE', subtitle: 'Utility alpine system', price: '$1,180', code: 'FR-RL05', color: 'Red / Black', swatch: '#b5282b', group: 'dark', model: 'model-6.webp', platform: 'a' },
+  { id: 'solar-ice', name: 'SOLAR ICE', subtitle: 'Gloss technical puffer', price: '$920', code: 'FR-SI06', color: 'Yellow', swatch: '#e4c336', group: 'color', model: 'model-7.webp', platform: 'b' },
+  { id: 'polar-mono', name: 'POLAR MONO', subtitle: 'Extended cold coat', price: '$1,090', code: 'FR-PM07', color: 'Black / White', swatch: '#e9e9e9', group: 'light', model: 'model-8.webp', platform: 'a' },
+  { id: 'ember-blue', name: 'EMBER BLUE', subtitle: 'Long puffer system', price: '$1,160', code: 'FR-EB08', color: 'Orange / Blue', swatch: '#ec6f26', group: 'color', model: 'model-9.webp', platform: 'b' },
+  { id: 'aurora-fur', name: 'AURORA FUR', subtitle: 'Cropped arctic fur', price: '$1,320', code: 'FR-AF09', color: 'Graphite', swatch: '#53575c', group: 'dark', model: 'model-1.webp', platform: 'a' },
 ];
 
 const search = document.querySelector('#product-search');
@@ -29,6 +29,19 @@ function buildCard(product, index) {
   card.dataset.search = `${product.name} ${product.subtitle} ${product.code} ${product.color}`.toLowerCase();
   card.classList.add(`platform-${product.platform}`);
   card.dataset.model = product.model.replace(/\.[^.]+$/, '');
+  card.dataset.productId = product.id;
+  card.setAttribute('role', 'link');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('aria-label', `View ${product.name} details`);
+  card.addEventListener('click', () => {
+    window.location.href = `./product.html?id=${product.id}`;
+  });
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      window.location.href = `./product.html?id=${product.id}`;
+    }
+  });
 
   platform.src = `./public/platforms/platform-spaced-${product.platform}.webp`;
   model.src = `./public/models/${product.model}`;
