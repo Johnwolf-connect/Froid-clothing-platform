@@ -4282,3 +4282,119 @@ body {
 }
 
 /* ===== FROID MOBILE 3 COLUMN FOOTER END ===== */
+
+/* ===== FROID FINAL MODEL PLATFORM ALIGNMENT START ===== */
+
+/*
+  Final source-of-truth for collection model grounding.
+  Keeps every model centered on its own complete platform.
+  Earlier stage/mobile sizing rules remain, but may not move
+  the feet away from the platform shelf.
+*/
+
+.product-card {
+  --model-drop: 5px;
+}
+
+.product-card.platform-a {
+  --foot: 31.0cqw !important;
+}
+
+.product-card.platform-b {
+  --foot: 25.4cqw !important;
+}
+
+.product-card[data-model="model-1"] { --model-drop: 4px; }
+.product-card[data-model="model-2"] { --model-drop: 5px; }
+.product-card[data-model="model-3"] { --model-drop: 4px; }
+.product-card[data-model="model-4"] { --model-drop: 5px; }
+.product-card[data-model="model-5"] { --model-drop: 5px; }
+.product-card[data-model="model-6"] { --model-drop: 4px; }
+.product-card[data-model="model-7"] { --model-drop: 5px; }
+.product-card[data-model="model-8"] { --model-drop: 5px; }
+.product-card[data-model="model-9"] { --model-drop: 5px; }
+
+.stage {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.mountain-stage {
+  position: absolute !important;
+  z-index: 1 !important;
+  left: 50% !important;
+  bottom: 0 !important;
+  top: auto !important;
+  width: 116% !important;
+  max-width: none !important;
+  height: auto !important;
+  transform: translateX(-50%) !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  pointer-events: none !important;
+}
+
+.product-model {
+  position: absolute !important;
+  z-index: 4 !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: calc(var(--foot) - var(--model-drop, 5px)) !important;
+  width: auto !important;
+  max-width: 92% !important;
+  transform: translateX(-50%) !important;
+  transform-origin: center bottom !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  margin-bottom: 0 !important;
+}
+
+/* REDLINE keeps its approved larger scale without lifting off the shelf. */
+.product-card[data-model="model-6"] .product-model {
+  bottom: calc(var(--foot) - 18px) !important;
+  transform: translateX(-50%) scale(1.045) !important;
+  transform-origin: center bottom !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hover enlarges from the feet instead of lifting the model. */
+@media (min-width: 851px) {
+  .product-card:hover .product-model {
+    transform: translateX(-50%) scale(1.035) !important;
+    transform-origin: center bottom !important;
+  }
+
+  .product-card[data-model="model-6"]:hover .product-model {
+    transform: translateX(-50%) scale(1.080) !important;
+    transform-origin: center bottom !important;
+  }
+}
+
+/* Mobile carousel: keep the same planted-foot geometry. */
+@media (max-width: 850px) {
+  .product-card.platform-a {
+    --foot: 31.0cqw !important;
+  }
+
+  .product-card.platform-b {
+    --foot: 25.4cqw !important;
+  }
+
+  .mountain-stage {
+    width: 116% !important;
+  }
+
+  .product-model {
+    bottom: calc(var(--foot) - var(--model-drop, 5px)) !important;
+    transform: translateX(-50%) !important;
+    transform-origin: center bottom !important;
+    margin-bottom: 0 !important;
+  }
+
+  .product-card[data-model="model-6"] .product-model {
+    bottom: calc(var(--foot) - 18px) !important;
+    transform: translateX(-50%) scale(1.045) !important;
+  }
+}
+
+/* ===== FROID FINAL MODEL PLATFORM ALIGNMENT END ===== */
